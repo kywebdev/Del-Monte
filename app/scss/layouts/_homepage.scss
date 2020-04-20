@@ -1,0 +1,442 @@
+.site-wrapper {
+    .homepage-intro {
+        position: relative;
+        z-index: 11;
+        text-align: center;
+        margin-bottom: -20px;
+    
+        @media screen and (max-width: $medium) {
+            margin-bottom: 0px;
+        }
+        @media screen and (max-width: $small) {
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: $purple;
+        }
+        &__text {
+            color: $purple;
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: bold;
+            font-style: italic;
+            width: 100%;
+            max-width: 750px;
+            margin: -10px auto 5px;
+        }
+        a {
+            display: block;
+            max-width: 750px;
+            margin: 0px auto;
+        }
+        .btn {
+            font-size: 18px;
+            letter-spacing: 1px;
+            background-color: $green;
+            color: $white;
+            text-transform: uppercase;
+            padding: 8px 30px;
+            border-radius: 10px;
+            transition: .5s ease;
+            display: inline-block;
+            width: auto;
+            max-width: 90%;
+            margin-top: 10px;
+        }
+    }
+    .video {
+        @include aspect-ratio(1216, 468);
+    
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .page-grid {
+        margin-bottom: 20px;
+    
+        .cell {
+            position: relative;
+        }
+        a {
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+        .quick-links {
+            margin-bottom: 10px;
+    
+            @media screen and (max-width: $small) {
+                margin-bottom: 30px;
+            }
+        }
+        .quick-link {
+            text-align: center;
+    
+            @media screen and (max-width: $medium) {
+                margin-bottom: 20px;
+            }
+            @media screen and (max-width: $small) {
+                margin-bottom: 10px;
+            }
+            &:nth-of-type(1) {
+                a {
+                    &:hover, &:active, &:focus {
+                        h2 {
+                            color: #a45a96;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(2) {
+                a {
+                    &:hover, &:active, &:focus {
+                        h2 {
+                            color: $green;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(3) {
+                a {
+                    &:hover, &:active, &:focus {
+                        h2 {
+                            color: $red;
+                        }
+                    }
+                }
+            }
+            h2 {
+                color: $purple;
+                text-align: center;
+                font-size: 35px;
+                line-height: 35px;
+                margin: 5px auto;
+                transition: .3s ease;
+        
+                @media screen and (max-width: 1920px) {
+                    font-size: 1.8vw;
+                    line-height: 1.8vw;
+                }
+                @media screen and (max-width: 1000px) {
+                    font-size: 26px;
+                    line-height: 26px;
+                }
+                @media screen and (max-width: $small) {
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+            img {
+                position: relative;
+                top: 0px;
+                transition: .3s ease;
+            }
+            a {
+                @media screen and (max-width: $small) {
+                    z-index: initial;
+                }
+                &:hover, &:active, &:focus {
+                    img {
+                        top: -20px;
+                    }
+                    
+                }
+            }
+        }
+    }
+    .product-locator-tile {
+        background-color: $red;
+        padding: 75px 0px;
+        background-image: url('../img/strawberry-pattern.png');
+        background-repeat: repeat-y;
+        background-position: 21%;
+        background-size: 33%;
+        position: relative;
+        height: 100%;
+    
+        @media screen and (max-width: 1000px) {
+            padding: 100px 0px 0px;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 75%;
+        }
+        &:after {
+            display: block;
+            content: '';
+            width: 30px;
+            height: 100%;
+            background-image: url('../img/tile-rip-right.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+        &__text {
+            background-color: $red;
+            padding: 25px 14%;
+    
+            h2 {
+                color: $white;
+                margin-top: 0px;
+                font-size: 28px;
+    
+                @media screen and (max-width: 1000px) {
+                    text-align: left;
+                }
+            }
+            p {
+                color: $white;
+                font-size: 16px;
+                font-weight: bold;
+                font-style: italic;
+                line-height: 22px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+    .product-locator-img {
+        text-align: center;
+        align-self: center;
+        padding-left: 15px !important;
+    
+        @media screen and (max-width: $small) {
+            padding: 20px 0px !important;
+        }
+        img {
+            display: block;
+            margin: 0px auto;
+        }
+        .btn {
+            display: inline-block;
+            font-size: 18px;
+            letter-spacing: 1px;
+            background-color: $red;
+            color: $white;
+            text-transform: uppercase;
+            padding: 8px 30px;
+            border-radius: 10px;
+            transition: .5s ease;
+            margin-top: 5px;
+
+            @media screen and (max-width: $small) {
+                margin-bottom: 10px;
+                display: inline-block;
+            }
+        }
+    }
+    .featured-content {
+        position: relative;
+        width: 100%;
+        
+        @media screen and (max-width: 1200px) {
+            height: 300px;
+        }
+        @media screen and (max-width: $small) {
+            height: auto;
+        }
+        &__img {
+            height: 100%;
+
+            @media screen and (max-width: $small) {
+                height: auto;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+                @media screen and (max-width: $small) {
+                    height: auto;
+                    object-fit: unset;
+                }
+            }
+        }
+        &__overlay {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px;
+            width: 100%;
+            max-width: 520px;
+            z-index: 1;
+    
+            @media screen and (max-width: $small) {
+                position: relative;
+                bottom: auto;
+                left: auto;
+                transform: none;
+                padding: 30px 0px 0px;
+            }
+            &.full-width {
+                max-width: none;
+            }
+            &.light-theme {
+                background-color: rgba($white, .5);
+    
+                @media screen and (max-width: $small) {
+                    background-color: transparent;
+                }
+                .featured-content__text {
+                    h2 {
+                        color: $purple;
+                    }
+                    p {
+                        color: $purple;
+                    }
+                    .btn {
+                        background-color: $purple;
+                        color: $white;
+                        margin-top: 5px;
+                    }
+                }
+            }
+            &.dark-theme {
+                background-color: rgba($black, .4);
+    
+                @media screen and (max-width: $small) {
+                    background-color: transparent;
+                }
+                .featured-content__text {
+                    h2 {
+                        color: $white;
+    
+                        @media screen and (max-width: $small) {
+                            color: $purple;
+                        }
+                    }
+                    p {
+                        color: $white;
+    
+                        @media screen and (max-width: $small) {
+                            color: $purple;
+                        }
+                    }
+                    .btn {
+                        background-color: $green;
+                        color: $white;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+        &__text {
+            text-align: center;
+    
+            h2 {
+                font-size: 28px;
+                margin-top: 0px;
+            }
+            p {
+                font-size: 16px;
+                line-height: 22px;
+                font-weight: bold;
+                font-style: italic;
+                width: 100%;
+                max-width: 480px;
+                margin: 10px auto;
+            }
+            .btn {
+                display: inline-block;
+                font-size: 18px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                padding: 8px 30px;
+                border-radius: 10px;
+                transition: .5s ease;
+            }
+        }
+    }
+    .video-content {
+        text-align: center;
+        align-self: center;
+    
+        &__video {
+            width: 85%;
+            max-width: 430px;
+            margin: 30px auto 15px;
+            @include aspect-ratio(16, 9);
+    
+            @media screen and (max-width: $small) {
+                width: 100%;
+                max-width: none;
+            }
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        a {
+            display: inline-block;
+            font-size: 18px;
+            letter-spacing: 1px;
+            background-color: #a45a96;
+            color: $white;
+            text-transform: uppercase;
+            padding: 8px 30px;
+            border-radius: 10px;
+            transition: .5s ease;
+            margin-top: 5px;
+    
+            @media screen and (max-width: $small) {
+                margin-bottom: 30px;
+                display: inline-block;
+            }
+            &:hover, &:active, &:focus {
+                color: $white;
+            }
+        }
+    }
+    .video-content-tile {
+        background-color: #a45a96;
+        padding: 75px 0px;
+        background-image: url('../img/orange-pattern.png');
+        background-repeat: repeat-y;
+        background-position: 78%;
+        background-size: 33%;
+        position: relative;
+        height: 100%;
+    
+        @media screen and (max-width: 1000px) {
+            padding: 100px 0px 0px;
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 75%;
+        }
+    
+        &:before {
+            display: block;
+            content: '';
+            width: 30px;
+            height: 100%;
+            background-image: url('../img/tile-rip-left.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0px;
+            left: -13px;
+        }
+        &__text {
+            background-color: #a45a96;
+            padding: 25px 14%;
+    
+            h2 {
+                color: $white;
+                margin-top: 0px;
+                font-size: 28px;
+                text-align: right;
+            }
+            p {
+                color: $white;
+                font-size: 16px;
+                font-weight: bold;
+                font-style: italic;
+                line-height: 22px;
+                margin-bottom: 0px;
+                text-align: right;
+            }
+        }
+    }
+}

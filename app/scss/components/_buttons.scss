@@ -1,0 +1,60 @@
+.site-wrapper, #menu, .splash-modal {
+    a {
+        font-family: $arial;
+        color: $green;
+        font-weight: bold;
+        transition: .2s ease-in-out;
+    
+        &:hover, &:focus, &:active {
+            color: darken($green, 15%);
+            text-decoration: none;
+        }
+    }
+    .btn {
+        color: $white;
+        padding: 10px 50px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+        display: inline-block;
+        text-align: center;
+        line-height: 1;
+        font-weight: bold;
+    
+        @media screen and (max-width: $small) {
+            padding: 10px 30px;
+        }
+        &:hover, &:focus, &:active {
+            color: $white;
+            box-shadow: none;
+        }
+        &--green {
+            background-color: $green;
+    
+            &:hover, &:focus, &:active {
+                background-color: darken($green, 15%);
+            }
+        }
+        &--purple {
+            background-color: $purple;
+    
+            &:hover, &:focus, &:active {
+                background-color: lighten($purple, 15%);
+            }
+        }
+        &--blue {
+            background-color: $blue;
+    
+            &:hover, &:focus, &:active {
+                background-color: darken($blue, 15%);
+            }
+        }
+        &--red {
+            background-color: $danger;
+    
+            &:hover, &:focus, &:active {
+                background-color: darken($danger, 15%);
+            }
+        }
+    }
+}

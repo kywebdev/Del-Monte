@@ -1,0 +1,256 @@
+.site-wrapper {
+    &.product-detail {
+        &.watermelon-rind-theme {
+            .product-slider {
+                border-bottom: 15px solid #74aa50;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #74aa50;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #74aa50;
+            }
+        }
+        &.celery-theme {
+            .product-slider {
+                border-bottom: 15px solid #a4d65e;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #a4d65e;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #a4d65e;
+            }
+        }
+        &.artichoke-theme {
+            .product-slider {
+                border-bottom: 15px solid #d2d755;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #d2d755;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #d2d755;
+            }
+        }
+        &.banana-theme {
+            .product-slider {
+                border-bottom: 15px solid #ede049;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #ede049;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #ede049;
+            }
+        }
+        &.pineapple-theme {
+            .product-slider {
+                border-bottom: 15px solid #ed8b00;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #ed8b00;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #ed8b00;
+            }
+        }
+        &.strawberry-theme {
+            .product-slider {
+                border-bottom: 15px solid #ef3340;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #ef3340;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #ef3340;
+            }
+        }
+        &.red-grape-theme {
+            .product-slider {
+                border-bottom: 15px solid #a15a95;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #a15a95;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #a15a95;
+            }
+        }
+        &.cantaloupe-theme {
+            .product-slider {
+                border-bottom: 15px solid #fdbe87;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #fdbe87;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #fdbe87;
+            }
+        }
+        &.watermelon-theme {
+            .product-slider {
+                border-bottom: 15px solid #ff8b9a;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #ff8b9a;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #ff8b9a;
+            }
+        }
+        &.nectarine-theme {
+            .product-slider {
+                border-bottom: 15px solid #ff5c39;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #ff5c39;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #ff5c39;
+            }
+        }
+        &.peach-theme {
+            .product-slider {
+                border-bottom: 15px solid #d14124;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #d14124;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #d14124;
+            }
+        }
+        &.plum-theme {
+            .product-slider {
+                border-bottom: 15px solid #612c51;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #612c51;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #612c51;
+            }
+        }
+        &.blueberry-theme {
+            .product-slider {
+                border-bottom: 15px solid #7bafd4;
+
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #7bafd4;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #7bafd4;
+            }
+        }
+        &.purple-grape-theme {
+            .product-slider {
+                border-bottom: 15px solid #535486;
+                
+                .flickity-page-dots {
+                    .dot {
+                        &.is-selected {
+                            &:after {
+                                background-color: #535486;
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                color: #535486;
+            }
+        }
+    }
+}

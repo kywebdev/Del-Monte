@@ -1,0 +1,201 @@
+.site-wrapper {
+    &.contact {
+        .main-content-wrapper {
+            h1 {
+                color: $purple;
+            }
+            h2 {
+                color: $purple;
+            }
+            .form {
+                margin-bottom: 50px;
+
+                @media screen and (max-width: $small) {
+                    margin-bottom: 30px;
+                }
+                .validation-error {
+                    input {
+                        &[type="checkbox"] {
+                            + label {
+                                + .validation-text {
+                                    margin-bottom: 20px;
+                                }
+                            }
+                        }
+                    }
+                    .custom_select {
+                        &:focus {
+                            .select-selected {
+                                border: 1px solid $red !important;
+                            }
+                        }
+                        .select-selected {
+                            border: 1px solid $danger !important;
+                            border-radius: 10px;
+                        }
+                        
+                    }
+                    .validation-text {
+                        color: $danger;
+                        margin-top: -12px;
+                        margin-bottom: 20px;
+                        display: block;
+                    }
+                    .custom_select {
+                        + .validation-text {
+                            margin-top: 8px;
+
+                            @media screen and (max-width: $small) {
+                                margin-top: -12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contact-reason {
+        .custom_select {
+            @media screen and (max-width: $small) {
+                margin-bottom: 0px;
+            }
+        }
+        .btn {
+            font-size: 14px;
+            margin-top: 5px;
+            margin-bottom: -5px;
+            width: 100%;
+            border-radius: 0px;
+            padding: 10px 0px;
+            transition: .2s ease-in-out;
+
+            &[disabled] {
+                background-color: lighten($green, 1%);
+
+                &:hover {
+                    background-color: lighten($green, 1%);
+                }
+            }
+        }
+    }
+    .custom_select {
+        position: relative;
+        outline: none;
+
+        @media screen and (max-width: $small) {
+            margin-bottom: 20px;
+        }
+        &:focus {
+            .select-selected {
+                border: 1px solid #74aa50 !important;
+            }
+        }
+    }
+    .custom_select select {
+        display: none;
+    }
+    .select-selected {
+        background-color: #ececec;
+
+        p {
+            margin-bottom: 0px;
+            display: inline-block;
+            font-size: 14px !important;
+            line-height: inherit !important;
+        }
+    }
+    .select-selected:after {
+        position: relative;
+        display: inline-block;
+        content: '';
+        right: -10px;
+        width: 10px;
+        height: 10px;
+        background-image: url('../img/mobile-nav-arrow.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: .2s ease-in-out;
+
+        @media screen and (max-width: 1250px) {
+            right: -10px;
+        }
+    }
+    .select-selected.select-arrow-active:after {
+        transform: rotate(90deg);
+    }
+    .select-items div,.select-selected {
+        color: $gray;
+        padding: 7px;
+        cursor: pointer;
+        font-size: 14px;
+        letter-spacing: .7px;
+        text-align: center;
+        border: 1px solid #808080 !important;
+        border-radius: 10px !important;
+
+        @media screen and (max-width: 1250px) {
+            padding: 8px 15px 7px;
+        }
+    }
+    .select-arrow-active {
+        border: 1px solid #74aa50 !important;
+    }
+    .select-items {
+        position: absolute;
+        background-color: $white;
+        width: calc(100% - 14px);
+        top: 100%;
+        left: 7px;
+        right: 0;
+        z-index: 99;
+        border-left: 1px solid #bbbbbb;
+        border-bottom: 1px solid #bbbbbb !important;
+        border-right: 1px solid #bbbbbb;
+        padding: 5px 0px;
+        opacity: 1;
+        visibility: visible;
+        max-height: 305px;
+        overflow-y: auto;
+        transition: .3s ease-in-out;
+
+        div {
+            border: none !important;
+            border-radius: 0px !important;
+        }
+        p {
+            margin-bottom: 0px;
+        }
+    }
+    .select-hide {
+        opacity: 0;
+        visibility: hidden;
+        top: 50%;
+    }
+    .select-items div {
+        transition: .2s ease-in-out;
+    }
+    .select-items div:hover, .same-as-selected {
+        background-color: rgba($gray, 0.15);
+        color: $purple;
+    }
+    .featured-recipes {
+        a {
+            &:nth-of-type(3) {
+                @media screen and (max-width: $small) {
+                    margin-bottom: -10px !important;
+                }
+            }
+        }
+    }
+    .contact-info {
+        text-align: center;
+    }
+}
+.contact-form {
+    hr {
+        border: none;
+        height: 4px;
+        background-color: $purple;
+        margin-bottom: calc(1rem + 20px);
+    }
+}

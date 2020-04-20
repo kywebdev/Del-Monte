@@ -1,0 +1,108 @@
+.site-wrapper {
+    .product-slider {
+        width: 100%;
+        overflow: hidden;
+        border: 1px solid #d2d2d2;
+
+        &:hover {
+            .flickity-page-dots {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        .slide {
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+        .flickity-button.previous {
+            width: 35px;
+            height: 44px;
+            background-color: transparent;
+            background-image: url('../img/slider-arrow-left.png') !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top center;
+            z-index: 1;
+            left: -8px;
+            opacity: .4;
+            border-radius: 0px;
+            transition: .2s ease-in-out;
+    
+            &:hover {
+                opacity: 1;
+            }
+            &:focus {
+                box-shadow: none;
+            }
+            svg {
+                display: none;
+            }
+        }
+        .flickity-button.next {
+            width: 35px;
+            height: 44px;
+            background-color: transparent;
+            background-image: url('../img/slider-arrow-right.png') !important;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            z-index: 1;
+            right: -8px;
+            opacity: .4;
+            border-radius: 0px;
+            transition: .2s ease-in-out;
+            
+            &:hover {
+                opacity: 1;
+            }
+            &:focus {
+                box-shadow: none;
+            }
+            svg {
+                display: none;
+            }
+        }
+        .flickity-page-dots {
+            bottom: 3%;
+            width: 70%;
+            max-width: 600px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            margin: 0px;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s ease-in-out;
+    
+            @media screen and (max-width: 650px) {
+                width: 80%;
+            }
+            li {
+                width: 100%;
+                height: 4px;
+                margin: 0px;
+                border-radius: 0px;
+                opacity: 1;
+                background-color: transparent;
+                padding: 15px 0px 19px;
+    
+                &:after {
+                    display: block;
+                    content: '';
+                    width: 100%;
+                    height: 4px;
+                    background-color: rgba(255, 255, 255, .85);
+                }
+            }
+            .dot {
+                &.is-selected {
+                    &:after {
+                        box-shadow: 0px 0px 5px $white;
+                    }
+                }
+            }
+        }
+    }
+}

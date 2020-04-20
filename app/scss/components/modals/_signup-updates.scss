@@ -1,0 +1,178 @@
+.updates-modal {
+    background: $purple !important;
+    padding: 50px !important;
+    position: relative;
+
+    @media screen and (max-width: $medium) {
+        padding: 50px 35px 35px !important;
+    }
+    div {
+        &[data-sf-role="error-message"] {
+            margin-top: -5px;
+        }
+    }
+    input {
+        &[type="checkbox"] {
+            + label {
+                + div {
+                    &[data-sf-role="error-message"] {
+                        margin-bottom: 30px;
+                        margin-top: -20px;
+                    }
+                }
+            }
+        }
+    }
+    &__content {
+        @media screen and (max-width: $medium) {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: calc(100% - 70px);
+        }
+
+        @media screen and (max-height: 700px) {
+            position: relative;
+            top: auto;
+            transform: none;
+            width: 100%;
+        }
+    }
+    p {
+        color: $white;
+        font-weight: bold;
+        font-size: 22px;
+    }
+    input, select {
+        border: 1px solid $white !important;
+        border-radius: 10px !important;
+        background-color: transparent;
+        color: $white !important;
+        margin-bottom: 12px !important;
+
+        &:focus {
+            border: 1px solid #74aa50 !important;
+            background-color: transparent;
+        }
+        &::placeholder {
+            color: $white !important;
+        }
+        &::-ms-input-placeholder {
+            color: $white !important;
+        }
+        &[type="checkbox"], &[type="radio"] {
+            border: none !important;
+            border-radius: 0px !important;
+            margin-top: 15px;
+
+            + label {
+                color: $white;
+                font-weight: normal;
+                margin: 15px 0px 40px;
+            }
+        }
+        &[type="submit"] {
+            border: none !important;
+            background-color: $green !important;
+            margin-bottom: 0px !important;
+
+            &:hover, &:focus, &:active {
+                background-color: darken($green, 15%) !important;
+            }
+        }
+    }
+    select {
+        background-image: url('../img/white-down-arrow.png');
+
+        option {
+            color: black;
+        }
+    }
+    &__logo {
+        width: 55px;
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+    }
+    .remodal-close {
+        left: auto;
+        right: 0px;
+        color: $white;
+        outline: none;
+
+        &:before {
+            font-size: 50px;
+            top: 15px;
+            left: -15px;
+        }
+        &:hover, &:focus, &:active {
+            color: $white;
+        }
+    }
+    div {
+        &[data-sf-role="field-captcha-container"] {
+            > div {
+                width: 330px;
+                margin: 0px auto;
+
+                img {
+                    border: 1px solid $gray;
+                    border-radius: 10px;
+                }
+            }
+        }
+        a {
+            &[data-sf-role="captcha-refresh-button"] {
+                width: 325px;
+                display: block;
+                margin: 5px auto 15px;
+                font-size: 14px;
+                text-align: left;
+                color: $green;
+                font-weight: bold;
+            }
+            + .form-inline {
+                .form-group {
+                    width: 100%;
+
+                    input {
+                        &[data-sf-role="captcha-input"] {
+                            width: 100%;
+                            margin-bottom: 10px !important;
+
+                            @media screen and (max-width: $small) {
+                                margin-bottom: 0px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sf-Captcha-button {
+        background-color: $green;
+        border: 1px solid $green;
+        padding: 10px 50px !important;
+        border-radius: 10px;
+
+        &:hover, &:focus, &:active {
+            box-shadow: none !important;
+            outline: none !important;
+            border: 1px solid $green !important;
+            background-color: darken($green, 15%) !important;
+        }
+    }
+}
+.remodal {
+    margin-bottom: 0px !important;
+
+    @media screen and (max-width: $medium) {
+        width: 100%;
+        max-width: none !important;
+        min-height: 100%;
+        margin-bottom: 0px !important;
+    }
+}
+.remodal-wrapper {
+    padding: 0px !important;
+}

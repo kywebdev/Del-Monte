@@ -1,0 +1,83 @@
+.daterangepicker {
+    font-family: $arial;
+    z-index: 9;
+    left: 0px !important;
+}
+.multipicker {
+    position: relative;
+    
+    .daterangepicker {
+        top: 42px !important;
+    }
+}
+.singlepicker {
+    position: relative;
+    
+    input {
+        cursor: pointer;
+    }
+    .daterangepicker {
+        top: 32px !important;
+    }
+}
+.daterangepicker td.active, .daterangepicker td.active:hover, .daterangepicker .end-date {
+    background-color: $green;
+}
+.daterangepicker td.in-range {
+    background-color: rgba($green, .2);
+}
+.daterangepicker td.in-range.start-date, .daterangepicker td.in-range.end-date {
+    background-color: $green;
+}
+.daterangepicker td.in-range.start-date.off, .daterangepicker td.in-range.end-date.off {
+    background-color: unset;
+
+    &:hover {
+        background-color: #eee;
+        color: black;
+    }
+}
+.daterangepicker th.month {
+    color: $purple;
+    font-size: 14px;
+}
+.daterangepicker.show-calendar .drp-buttons {
+    background-color: $purple;
+    border-radius: 0px 0px 4px 4px;
+}
+.daterangepicker .drp-selected {
+    color: $white;
+    font-weight: bold;
+    font-size: 13px;
+
+    @media screen and (max-width: 563px) {
+        font-size: 12px;
+    }
+}
+.daterangepicker .drp-buttons .btn.cancelBtn {
+    background-color: $danger;
+    color: $white;
+
+    &:hover, &:active, &:focus {
+        background-color: darken($danger, 10%);
+    }
+}
+.daterangepicker .drp-buttons .btn.applyBtn {
+    background-color: $green;
+
+    &:hover, &:active, &:focus {
+        background-color: darken($green, 10%);
+    }
+}
+.daterangepicker .drp-buttons .btn {
+    border: none;
+    letter-spacing: 0px;
+    border-radius: 0.2rem;
+    line-height: 1.5;
+}
+.daterangepicker.opensright:before {
+    left: 13px;
+}
+.daterangepicker.opensright:after {
+    left: 14px;
+}

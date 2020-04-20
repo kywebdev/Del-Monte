@@ -1,0 +1,201 @@
+.site-wrapper {
+    .nutrition-facts {
+        font-size: small;
+        line-height: 1.4;
+
+        @media screen and (max-width: 900px) {
+            order: 1;
+            width: 50%;
+            padding: 0px 15px;
+        }
+        @media screen and (max-width: $small) {
+            width: 100%;
+            padding: 0px;
+        }
+        img {
+            display: block;
+            margin: 0px auto;
+
+            @media screen and (max-width: 900px) {
+                margin: 0px;
+            }
+            @media screen and (max-width: $small) {
+                margin: 0px auto;
+            }
+        }
+        p {
+            margin: 0px;
+        }
+        .performance-facts {
+            border: 1px solid $purple;
+            width: 100%;
+            padding: 0.5rem;
+            position: relative;
+            z-index: 1;
+            overflow-x: auto;
+            margin-bottom: 40px;
+
+            @media screen and (max-width: $small) {
+                margin-bottom: 0px;
+            }
+            table {
+                border-collapse: collapse;
+            }
+        }
+        .performance-facts__title {
+            font-weight: bold;
+            font-size: 2rem;
+            margin: 0 0 0.25rem 0;
+            font-family: $arial;
+            letter-spacing: 0px;
+            color: $purple;
+        }
+        .performance-facts__header {
+            border-bottom: 10px solid $purple;
+            padding: 0 0 0.25rem 0;
+            margin: 0 0 0.5rem 0;
+            
+            p {
+                margin: 0;
+                font-size: small;
+                color: $purple;
+                line-height: initial;
+                font-family: $arial;
+            }
+        }
+        .performance-facts__table {
+            width: 100%;
+
+            thead tr {
+                th, td {
+                    border: 0;
+                }
+            }
+            tr {
+                color: $purple;
+                font-family: $arial;
+                display: flex;
+                width: 100%;
+            }
+            th, td {
+                font-weight: normal;
+                text-align: left;
+                padding: 0.25rem 0;
+                border-top: 1px solid $purple; 
+                width: 50%;
+            }
+            td {
+                white-space: inherit;
+                
+                &:last-child {
+                    text-align: right;
+                }
+            }
+            .blank-cell {
+                width: 1rem;
+                border-top: 0;
+            }
+            .indent-cell {
+                padding-left: 15px;
+            }
+            .thick-row {
+                th, td {
+                    border-top-width: 5px;
+                    width: 100%;
+                }
+            }
+        }
+        .small-info {
+            font-size: 0.7rem;
+            color: $purple;
+            line-height: inherit;
+            font-family: $arial;
+        }
+          
+        .performance-facts__table--small {
+            @extend .performance-facts__table;
+            border-bottom: 1px solid $purple;
+            margin: 0 0 0.5rem 0;
+
+            thead {
+                tr {
+                    border-bottom: 1px solid $purple; 
+                }
+                th {
+                    width: 22%;
+                    padding: 0px 5px;
+
+                    &:last-of-type {
+                        padding-right: 0px;
+                    }
+                }
+                td {
+                    width: 34%;
+                    padding: 0px;
+                }
+            }
+            td {
+                &:last-child {
+                    text-align: left;
+                }
+            }
+            th, td {
+                border: 0px;
+                padding: 0px;
+            }
+            th {
+                padding: 0px 5px 0px 0px;
+                width: 34%;
+            }
+            td {
+                padding: 0px 5px;
+                width: 22%;
+
+                &:last-of-type {
+                    padding-right: 0px;
+                }
+            }
+        }
+        .performance-facts__table--grid {
+            @extend .performance-facts__table;
+            margin: 0 0 0.5rem 0;
+
+            + .small-info {
+                margin-bottom: 5px;
+            }
+            td {
+                &:last-child {
+                    text-align: left;
+                    
+                    &::before {
+                        content: "•";
+                        font-weight: bold;
+                        margin: 0 0.25rem 0 0;
+                    }
+                }
+            }
+        }
+        .text-center {
+            text-align: center;
+        }
+        .thick-end {
+            border-bottom: 10px solid $purple;
+        }
+        .thin-end {
+            border-bottom: 1px solid $purple;
+        }
+        ul {
+            li {
+                color: $gray;
+                font-size: 14px;
+                margin-bottom: 15px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .site-wrapper .nutrition-facts .performance-facts__table tr, .site-wrapper .nutrition-facts .performance-facts__table--small tr, .site-wrapper .nutrition-facts .performance-facts__table--grid tr {
+        display: table-row;
+    }
+}
