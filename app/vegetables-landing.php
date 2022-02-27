@@ -8,97 +8,114 @@
     </head>
     <body id="top">
         <?php include('includes/loading-screen.php'); ?>
-        <div class="site-wrapper general gallery-page recipes-dataset">
+        <div class="site-wrapper general gallery-page">
             <?php include('includes/mobile-nav.php'); ?>
             <div class="site">
-                <?php include('includes/sidebar.php'); ?>
-                <main class="bg-texture-watermelon">
+                <?php include('includes/header.php'); ?>
+                <main id="main">
                     <section class="main-content-wrapper">
-                        <div class="section-container">
-                            <nav class="breadcrumbs" aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">PagePath</a></li>
-                                    <li class="breadcrumb-item"><a href="#">BreadCrumb</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">General Page</li>
+                        <nav class="breadcrumb__nav" aria-label="breadcrumb">
+                            <div class="section-container">
+                                <ol class="breadcrumb__list">
+                                    <li class="breadcrumb__list-item"><a href="index.php">Home</a></li>
+                                    <li class="breadcrumb__list-item"><a href="products-landing.php">Products</a></li>
+                                    <li class="breadcrumb__list-item --active" aria-current="page">Fresh Vegetables</li>
                                 </ol>
-                                <form class="form">
-                                    <label for="recipe-search">Recipe Search</label>
-                                    <input type="search" id="recipe-search" placeholder="Recipe Search" />
-                                </form>
-                                <div class="recipes-heading">
-                                    <h1>Vegetables Landing Page</h1>
-                                    <div class="browse-filters">
-                                        <a href="" class="btn btn--blue browse-by">Browse By <span class="down-arrow">&#9660;</span></a>
-                                        <?php include('includes/product-filter-flyout.php'); ?>
-                                        <span class="fas fa-tag"></span>
-                                        <nav class="selected-filters nav tabs">
-                                            <ul class="filter-bar__buttons -primary">
-                                                <li>
-                                                    <a href="" class="selected-filters__filter">Filter 1 <span class="fas fa-times"></span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="" class="selected-filters__filter">Filter 2 <span class="fas fa-times"></span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="" class="selected-filters__filter">Filter 3 <span class="fas fa-times"></span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="" class="selected-filters__filter">Filter 4 <span class="fas fa-times"></span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="" class="selected-filters__filter clear">Clear All <span class="fas fa-times"></span></a>
-                                                </li>
-                                            </ul>
-                                        </nav>
+                            </div>
+                        </nav>
+                        <div class="section-container">
+                            <div class="section__header">
+                                <div class="section__header-container">
+                                    <div class="page__title-container">
+                                        <h1 class="page__title --green"><span>fReSh vegetableS</span></h1>
                                     </div>
-                                </div>
-                            </nav>
-                            <div class="container-fluid cards">
-                                <div class="row">
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
-                                    <?php include('includes/cards/vegetables-card.php'); ?>
+                                    <form class="form search-form">
+                                        <label for="search-form__input">Search all products</label>
+                                        <input id="search-form__input" class="search-form__input" type="search"  placeholder="Search all products" aria-label="Search all products">
+                                        <button class="search-form__submit aria-label="Search">
+                                            <svg class="icon svg-icon-search" aria-hidden="true"><use xlink:href="#svg-icon-search"></use></svg>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
-                            <div class="align-center">
-                                <p><strong>Viewing 24 of 100 products</strong></p>
-                                <a href="" class="btn btn--green">Load 76 more</a>
+                            <div class="container-fluid cards global-cards page-grid product-cards">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="card">
+                                            <a href="product-detail.php" class="card__img">
+                                                <img src="img/broccoli.jpg" alt="" />
+                                                <div class="card__text__heading">
+                                                    <p>bRoccoli ></p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="card">
+                                            <a href="product-detail.php" class="card__img">
+                                                <img src="img/broccoli.jpg" alt="" />
+                                                <div class="card__text__heading">
+                                                    <p>bRoccoli ></p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="card">
+                                            <a href="product-detail.php" class="card__img">
+                                                <img src="img/broccoli.jpg" alt="" />
+                                                <div class="card__text__heading">
+                                                    <p>bRoccoli ></p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="card">
+                                            <a href="product-detail.php" class="card__img">
+                                                <img src="img/broccoli.jpg" alt="" />
+                                                <div class="card__text__heading">
+                                                    <p>bRoccoli ></p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="card">
+                                            <a href="product-detail.php" class="card__img">
+                                                <img src="img/broccoli.jpg" alt="" />
+                                                <div class="card__text__heading">
+                                                    <p>bRoccoli ></p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="card">
+                                            <a href="product-detail.php" class="card__img">
+                                                <img src="img/broccoli.jpg" alt="" />
+                                                <div class="card__text__heading">
+                                                    <p>bRoccoli ></p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center load-more">
+                                <p>Viewing 6 of 18 products</p>
+                                <button class="btn --green">load 6 more</button>
                             </div>
                             <?php include('includes/cards.php'); ?>
                         </div>
-                        <a href="#top" class="back-to-top">
-                            <img src="img/back-to-top.png" alt="" />
-                        </a>
+                        <?php include('includes/footer.php'); ?>
                     </section>
-                    <?php include('includes/mobile-footer.php'); ?>
                 </main>
-                <?php include('includes/sitemap.php'); ?>
             </div>
             <?php include('includes/cookies-prompt.php'); ?>
         </div>
-        <?php include('includes/search-modal.php'); ?>
         <?php include('includes/updates-modal.php'); ?>
+        <?php include('img/svg-sprite/svg/symbols.svg'); ?>
         <?php include('includes/scripts.php'); ?>
     </body>
 </html>

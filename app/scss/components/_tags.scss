@@ -1,0 +1,41 @@
+.tag-list__container {
+    color: $green;
+    padding-left: 40px;
+    position: relative;
+    margin-bottom: 25px;
+    svg {
+        height: 25px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 22px;
+    }
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tag-list__item {
+    color: $green;
+    @include text-18(1);
+    font-weight: 500;
+    margin-right: .5em;
+    a {
+        
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+    &:not(:last-of-type){
+        &:after {
+            color: $green;
+            content: ',';
+        }
+    }
+}

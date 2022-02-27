@@ -15,8 +15,10 @@
     <div class="form-inline">
         <div class="form-group">
             <input data-sf-role="violation-messages" type="hidden" value="{&quot;required&quot;: &quot;Captcha field input is required&quot;}">
-            <label for="Textbox-3">Please type the code above </label>
-            <input id="Textbox-3" type="text" data-sf-role="captcha-input" name="captcha-a" required="required" class="form-control input-sm" style="">
+            <div class="contact-form__item">
+                <label for="Textbox-3"><sup>*</sup>Enter Code</label>
+                <input type="text" id="Textbox-3" data-sf-role="captcha-input" name="captcha-a" />
+            </div>
         </div>
     </div>
     <div data-sf-role="error-message" role="alert" aria-live="assertive" class="text-danger" style="display: none;"></div>

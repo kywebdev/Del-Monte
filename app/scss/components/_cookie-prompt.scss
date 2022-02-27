@@ -1,0 +1,87 @@
+.site-wrapper {
+    .cookies-prompt {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 1000;
+        background-color: $green-100;
+        padding: 40px 0px;
+    
+        @media screen and (max-width: $medium) {
+            padding: 50px 0px 35px;
+        }
+        .section-container {
+            max-width: 1600px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .remodal-close {
+            width: 20px;
+            height: 20px;
+            top: 25px;
+            right: 25px;
+            left: auto;
+            background-image: url('../img/modal-close.svg');
+            background-size: cover;
+            background-repeat: no-repeat;
+    
+            @media screen and (max-width: $medium) {
+                top: 20px;
+                right: 20px;
+            }
+            &:before {
+                display: none;
+            }
+        }
+        &__text {
+            width: calc(100% - 420px);
+            padding-right: 40px;
+            display: flex;
+            align-items: center;
+    
+            @media screen and (max-width: $large) {
+                width: calc(100% - 400px);
+                padding-right: 20px;
+            }
+            @media screen and (max-width: $medium) {
+                width: 100%;
+                padding-right: 0px;
+                margin-bottom: 25px;
+            }
+            p {
+                font-size: 18px;
+                color: $white;
+                margin-bottom: 0px;
+    
+                span {
+                    font-family: $intro;
+                    font-size: 22px;
+    
+                    @media screen and (max-width: $small) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        &__buttons {
+            width: 420px;
+            display: flex;
+            align-items: center;
+    
+            @media screen and (max-width: $large) {
+                width: 400px;
+            }
+            @media screen and (max-width: $medium) {
+                width: 100%;
+            }
+            .--green {
+                margin-right: 40px;
+    
+                @media screen and (max-width: $large) {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}

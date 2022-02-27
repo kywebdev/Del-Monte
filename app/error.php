@@ -8,32 +8,19 @@
     </head>
     <body id="top">
         <?php include('includes/loading-screen.php'); ?>
-        <div class="site-wrapper">
+        <div class="site-wrapper error-page">
             <?php include('includes/mobile-nav.php'); ?>
-            <div class="error-page">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="error-page__container">
-                                <h1>404</h1>
-                                <h2>Fresh not found</h2>
-                                <p>Looks like that webpage isn’t fresh anymore, and if it’s not fresh, it’s not good enough for Del Monte Fresh. Please go back or visit our <a href="index.php">home page</a>.</p>
-                                <a href="index.php" class="btn btn--green">Back To Site</a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="error-page__bg-img">
-                                <img src="img/fruits-error.jpg" alt="" />
-                            </div>
-                        </div>
+            <main>
+                <div class="section-container">
+                    <div>
+                        <img src="img/logo.svg" alt="Del Monte logo" class="logo" />
+                        <h1 class="heading --red"><span>404</span></h1><br />
+                        <h2 class="heading --red"><span>fReSh not found</span></h2>
+                        <p><span>Looks like that webpage isn’t fresh anymore, </span>and if it’s not fresh, it’s not good enough for Del Monte Fresh. Please go back or visit our home page.</p>
+                        <a href="index.php" class="btn --green">Back To Site</a>
                     </div>
                 </div>
-                <div class="error-page__bottom">
-                    <div class="error-page__logo-container">
-                        <img src="img/logo.svg" alt="Del Monte logo" class="error-page__logo" />
-                    </div>
-                </div>
-            </div>
+            </main>
             <?php include('includes/cookies-prompt.php'); ?>
         </div>
         <?php include('includes/scripts.php'); ?>

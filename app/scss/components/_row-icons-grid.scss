@@ -1,0 +1,85 @@
+.icons-grid {
+	padding-bottom: clamp(30px,7vw,60px);
+	padding-top: clamp(30px,7vw,60px);
+}
+
+.icons-grid__heading {
+	margin-bottom: 1.125em;
+}
+
+.icons-grid__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 3em 1em;
+
+	@media screen and (max-width: $medium) {
+		grid-gap: 0px;
+	}
+}
+
+.icons-grid__item {
+	position: relative;
+	&[data-icon="excellence"],
+	&[data-icon="passion"],
+	&[data-icon="creativity"],
+	&[data-icon="care"],
+	&[data-icon="trust"]{
+		padding-left: 65px;
+
+		&:before {
+			background-position: center top;
+			background-repeat: no-repeat;
+			background-size: contain;
+			content: '';
+			height: 60px;
+			left: 0;
+			position: absolute;
+			top: -10px;
+			width: 50px;
+		}
+	}
+
+	&[data-icon="excellence"]:before{
+		background-image:url('../img/icon-excellence.png');
+	}
+
+	&[data-icon="passion"]:before{
+		background-image:url('../img/icon-passion.png');
+	}
+
+	&[data-icon="creativity"]:before{
+		background-image:url('../img/icon-creativity.png');
+	}
+
+	&[data-icon="care"]:before{
+		background-image:url('../img/icon-care.png');
+	}
+
+	&[data-icon="trust"]:before{
+		background-image:url('../img/icon-trust.png');
+	}
+	img {
+		width: 100%;
+	}
+}
+
+.icons-grid__item-title,
+.icons-grid__item dt {
+	@include text-22($green,1,$intro);
+	margin-bottom: .75em;
+	text-transform: uppercase;
+	font-weight: normal;
+}
+
+.icons-grid__item-desc,
+.icons-grid__item dd {
+	font-size: 22px;
+	line-height: 30px;
+	margin-bottom: 35px;
+}
+
+@media screen and (min-width: $medium-start) {
+	picture.icons-grid__item {
+		margin-left: 15px;
+	}
+}

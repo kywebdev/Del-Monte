@@ -1,0 +1,117 @@
+.splash-modal {
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    position: relative !important;
+    max-width: none !important;
+    margin-bottom: 0px !important;
+    background-image: url('../img/bg/texture-paint-repeat.jpg') !important;
+
+    @media screen and (max-width: $medium) {
+        min-height: calc(100vh - 170px);
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 367px;
+        height: 501px;
+        background-image: url('../img/splash-leaf.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom right;
+
+        @media screen and (max-width: $medium) {
+            width: 250px;
+        }
+        @media screen and (max-width: $small) {
+            width: 150px;
+        }
+    }
+    .remodal-close {
+        color: $white;
+        left: auto;
+        right: 0px;
+        width: 60px;
+        height: 60px;
+
+        &:hover, &:focus {
+            color: $white;
+            outline: none;
+        }
+        &:before {
+            font-size: 50px;
+            line-height: 60px;
+            width: 60px;
+        }
+        &.close-text {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 90px;
+
+            &:before {
+                display: none;
+            }
+        }
+    }
+    &__container {
+        width: 90%;
+        max-width: 700px;
+        margin: 0px auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @media screen and (max-height: 500px) {
+            margin: 0px auto;
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+        }
+    }
+    &__logo {
+        width: 150px;
+        margin: 0px auto 30px;
+
+        @media screen and (max-width: $small) {
+            width: 100px;
+            margin: 0px auto 25px;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+    h1 {
+        margin-bottom: 25px;
+
+        @media screen and (max-width: $small) {
+            margin-bottom: 20px;
+        }
+    }
+    h2 {
+        font-family: $intro;
+        font-size: 22px;
+        line-height: 32px;
+        color: $green;
+        margin-top: 0px !important;
+        margin-bottom: 30px;
+
+        @media screen and (max-width: $small) {
+            margin-bottom: 20px;
+        }
+    }
+    &__text {
+        p {
+            max-width: 550px;
+            margin: 0px auto 40px;
+
+            @media screen and (max-width: $small) {
+                margin: 0px auto 30px;
+            }
+        }
+    }
+}

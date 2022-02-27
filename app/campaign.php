@@ -12,18 +12,25 @@
             <?php include('includes/splash-modal.php'); ?>
             <?php include('includes/mobile-nav.php'); ?>
             <div class="site">
-                <?php include('includes/sidebar.php'); ?>
-                <main class="bg-texture-watermelon">
+                <?php include('includes/header.php'); ?>
+                <main id="main">
                     <section class="main-content-wrapper">
-                        <div class="section-container">
-                            <nav class="breadcrumbs" aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">PagePath</a></li>
-                                    <li class="breadcrumb-item"><a href="#">BreadCrumb</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">General Page</li>
+                        <nav class="breadcrumb__nav" aria-label="breadcrumb">
+                            <div class="section-container">
+                                <ol class="breadcrumb__list">
+                                    <li class="breadcrumb__list-item"><a href="index.php">Home</a></li>
+                                    <li class="breadcrumb__list-item --active" aria-current="page">Campaign Landing Page</li>
                                 </ol>
-                            </nav>
-                            <!-- This div should be customizable (class names in parentheses). Should have the ability to choose between two different rip styles, (rip-1) and (rip-2). -->
+                            </div>
+                        </nav>
+                        <div class="section-container">
+                            <div class="section__header">
+                                <div class="section__header-container">
+                                    <div class="page__title-container">
+                                        <h1 class="page__title --orange"><span>campaign landing page</span></h1>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="campaign-hero rip-1">
                                 <img src="img/campaign-hero.jpg" alt="" />
                             </div>
@@ -95,18 +102,14 @@
                             <p>Turnip greens yarrow ricebean rutabaga endive cauliflower sea lettuce kohlrabi amaranth water spinach avocado daikon napa cabbage asparagus winter purslane kale. Celery potato scallion desert raisin horseradish spinach carrot soko. Lotus root water spinach fennel kombu maize bamboo shoot green bean swiss chard seakale pumpkin onion chickpea gram corn pea. Brussels sprout coriander water chestnut gourd swiss chard wakame kohlrabi beetroot carrot watercress. Corn amaranth salsify bunya nuts nori azuki bean chickweed potato bell pepper artichoke. Nori grape silver beet broccoli kombu beet greens fava bean potato quandong celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip. Sea lettuce lettuce water chestnut eggplant winter purslane fennel azuki bean earthnut pea sierra leone bologi leek soko chicory celtuce parsley jícama salsify.</p>
                             <?php include('includes/cards.php'); ?>
                         </div>
-                        <a href="#top" class="back-to-top">
-                            <img src="img/back-to-top.png" alt="" />
-                        </a>
+                        <?php include('includes/footer.php'); ?>
                     </section>
-                    <?php include('includes/mobile-footer.php'); ?>
                 </main>
-                <?php include('includes/sitemap.php'); ?>
             </div>
             <?php include('includes/cookies-prompt.php'); ?>
         </div>
-        <?php include('includes/search-modal.php'); ?>
         <?php include('includes/updates-modal.php'); ?>
+        <?php include('img/svg-sprite/svg/symbols.svg'); ?>
         <?php include('includes/scripts.php'); ?>
     </body>
 </html>

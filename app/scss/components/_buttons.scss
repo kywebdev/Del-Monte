@@ -1,60 +1,143 @@
 .site-wrapper, #menu, .splash-modal {
+
     a {
-        font-family: $arial;
         color: $green;
-        font-weight: bold;
         transition: .2s ease-in-out;
     
         &:hover, &:focus, &:active {
-            color: darken($green, 15%);
+            color: #a0c53d;
             text-decoration: none;
         }
     }
+
     .btn {
-        color: $white;
-        padding: 10px 50px;
-        font-size: 14px;
-        letter-spacing: 1px;
-        border-radius: 10px;
+        font-family: $intro;
+        font-size: 22px;
+        line-height: 32px;
+        color: $green;
+        text-transform: uppercase;
+        transition: .3s ease;
         display: inline-block;
         text-align: center;
-        line-height: 1;
-        font-weight: bold;
+        width: auto;
+        padding: 0px;
+        font-weight: normal;
     
         @media screen and (max-width: $small) {
-            padding: 10px 30px;
+            font-size: 18px;
+            line-height: 28px;
+        }
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background-image: url('../img/green-caret-right.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            left: 15px;
+            top: 1px;
+            transition: .2s ease-in-out;
+
+            @media screen and (max-width: $small) {
+                width: 8px;
+                height: 15px;
+            }
         }
         &:hover, &:focus, &:active {
-            color: $white;
+            color: #a0c53d;
             box-shadow: none;
-        }
-        &--green {
-            background-color: $green;
-    
-            &:hover, &:focus, &:active {
-                background-color: darken($green, 15%);
+
+            &:after {
+                background-image: url('../img/light-green-caret-right.svg');
+                left: 18px;
             }
         }
-        &--purple {
-            background-color: $purple;
-    
-            &:hover, &:focus, &:active {
-                background-color: lighten($purple, 15%);
+        &.--green {
+            background-color: $green-300;
+            color: $white;
+            padding: 20px 45px 20px 35px;
+            border-radius: 100px;
+
+            @media screen and (max-width: $small) {
+                padding: 15px 40px 15px 30px;
+            }
+            &:after {
+                background-image: url('../img/white-caret-right.svg');
+            }
+            &:hover {
+                background-color: lighten($green-300, 5%);
             }
         }
-        &--blue {
-            background-color: $blue;
-    
-            &:hover, &:focus, &:active {
-                background-color: darken($blue, 15%);
+        &.--red {
+            background-color: $red;
+            color: $white;
+            padding: 20px 45px 20px 35px;
+            border-radius: 100px;
+
+            @media screen and (max-width: $small) {
+                padding: 15px 40px 15px 30px;
+            }
+            &:after {
+                background-image: url('../img/white-caret-right.svg');
+            }
+            &:hover {
+                background-color: lighten($red, 5%);
             }
         }
-        &--red {
-            background-color: $danger;
-    
-            &:hover, &:focus, &:active {
-                background-color: darken($danger, 15%);
+        &.--no-arrow {
+            padding: 20px 35px;
+
+            @media screen and (max-width: $small) {
+                padding: 15px 30px;
+            }
+            &:after {
+                display: none;
+            }
+        }
+        &:disabled {
+            &:hover,&:focus,&:active {
+                &:after {
+                    left: 15px;
+                }
             }
         }
     }
+
+    .btn-inline {
+        display: inline-block;
+        @include heading-22();
+        padding-right: 1.75em;
+        position: relative;
+        text-transform: uppercase;
+        svg {
+            height: 20px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(-35%,-50%);
+            transition: transform .25s linear;
+            width: 16px;
+        }
+        &:hover,
+        &:focus {
+            svg {
+                transform: translate(0,-50%);
+            }
+        }
+    }
+    button.btn-inline {
+        background: none !important;
+        border: none;
+        padding-left: 0;
+    }
+
+    .btn--search {
+        background: transparent;
+        border: none;
+        color: $green;
+        padding: 0;
+    }
+
 }

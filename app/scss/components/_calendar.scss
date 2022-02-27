@@ -10,47 +10,65 @@
             font-family: $arial;
             font-size: 14px;
         }
+
+        .calendar-parent .day {
+            background-color: $white;
+        }
+
         .calendar-parent .clndr .clndr-controls {
             display: flex;
             justify-content: space-around;
             width: 100%;
             position: relative;
-            margin-bottom: -3px;
-            background-color: $purple;
-            padding: 22px 15px;
+            background-color: $green;
+            padding: 3em 15px;
         }
         .calendar-parent .clndr .clndr-controls .month {
+            @include heading-28($white,1);
             text-align: center;
-            color: $white;
-            font-family: $arial-black;
-            font-size: 22px;
-            font-style: italic;
-            letter-spacing: 1px;
         }
-        .calendar-parent .clndr .clndr-controls .clndr-control-button .clndr-next-button {
+        
+        .calendar-parent .clndr .clndr-controls .clndr-control-button {
+            &:first-of-type {
+                margin-left: auto;
+                margin-right: 10%;
+            }
+            &:last-of-type {
+                margin-right: auto;
+                margin-left: 10%;
+            }
+        }
+
+        .calendar-parent .clndr .clndr-controls .clndr-control-button [class*="button"]{
             cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
             display: block;
-            width: 20px;
+            font-size: 0px;
             margin: 0px auto;
             position: relative;
             top: 3px;
-            font-size: 0px;
-
+            width: 20px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
             &:after {
                 content: '';
                 display: inline-block;
-                background-image: url('../img/calendar-arrow.png');
-                background-size: cover;
+                background-image: url('../img/icon-angle-right.svg');
+                background-size: contain;
                 background-repeat: no-repeat;
                 width: 20px;
                 height: 20px;
                 position: relative;
+            }            
+        }
+
+        .calendar-parent .clndr .clndr-controls .clndr-control-button .clndr-previous-button {
+            &:after {
                 transform: scale(-1);
             }
         }
+
+
         .calendar-parent .clndr .clndr-controls .clndr-control-button .clndr-next-button.inactive {
             opacity: 0.5;
         }
@@ -73,8 +91,8 @@
             &:after {
                 content: '';
                 display: inline-block;
-                background-image: url('../img/calendar-arrow.png');
-                background-size: cover;
+                background-image: url('../img/icon-angle-right.svg');
+                background-size: contain;
                 background-repeat: no-repeat;
                 width: 20px;
                 height: 20px;
@@ -94,17 +112,21 @@
             border-collapse: inherit;
         }
         .calendar-parent .clndr .clndr-table .header-days {
-            height: 30px;
-            font-size: 10px;
-            background: $purple;
+            background-color: $green;
+            // height: 30px;
+            // font-size: 10px;
+            // background: $purple;
         }
         .calendar-parent .clndr .clndr-table .header-days .header-day {
-            vertical-align: middle;
+            @include heading-22($white,1);
+            padding: .5em 15px;
             text-align: center;
-            color: #fff;
-            font-size: 14px;
-            font-weight: bold;
-            padding-bottom: 5px;
+            // vertical-align: middle;
+            // text-align: center;
+            // color: #fff;
+            // font-size: 14px;
+            // font-weight: bold;
+            // padding-bottom: 5px;
         }
         .calendar-parent .clndr .clndr-table .header-days .header-day:last-child {
             border-right: 1px solid $purple;
@@ -113,11 +135,15 @@
             vertical-align: top;
         }
         .calendar-parent .clndr .clndr-table tr .day {
-            border-left: 1px solid $gray;
-            border-top: 1px solid $gray;
+            border-left: 2px solid $green;
+            border-top: 2px solid $green;
             width: 100%;
             height: inherit;
             @include aspect-ratio(1, 1);
+            @media screen and (max-width: $medium) {
+                border-left: 1px solid $green;
+                border-top: 1px solid $green;
+            }
         }
         .calendar-parent .clndr .clndr-table tr .day.event,
         .calendar-parent .clndr .clndr-table tr .day.my-event {
@@ -138,24 +164,31 @@
         background: #ddd;
             }
         .calendar-parent .clndr .clndr-table tr .day:last-child {
-            border-right: 1px solid $gray;
+            border-right: 2px solid $green;
+            @media screen and (max-width: $medium) {
+                border-right: 1px solid $green;
+            }
         }
         .calendar-parent .clndr .clndr-table tr .day .day-contents {
-            box-sizing: border-box;
-            padding: 8px;
-            font-size: 14px;
-            font-weight: bold;
-            color: $gray;
+            padding: .75em;
+            @include text-22($green,1,$intro);
+            @media screen and (max-width: $medium) {
+                padding: 8px;
+            }
         }
         .calendar-parent .clndr .clndr-table tr .empty,
         .calendar-parent .clndr .clndr-table tr .adjacent-month,
         .calendar-parent .clndr .clndr-table tr .my-empty,
         .calendar-parent .clndr .clndr-table tr .my-adjacent-month {
-            border-left: 1px solid $gray;
-            border-top: 1px solid $gray;
+            border-left: 2px solid $green;
+            border-top: 2px solid $green;
             width: 100%;
             height: inherit;
             background: #eee;
+            @media screen and (max-width: $medium) {
+                border-left: 1px solid $green;
+                border-top: 1px solid $green;
+            }
         }
         .calendar-parent .clndr .clndr-table tr .adjacent-month.event {
             background: #cadfad;
@@ -172,15 +205,24 @@
         .calendar-parent .clndr .clndr-table tr .adjacent-month:last-child,
         .calendar-parent .clndr .clndr-table tr .my-empty:last-child,
         .calendar-parent .clndr .clndr-table tr .my-adjacent-month:last-child {
-            border-right: 1px solid $gray;
+            border-right: 2px solid $green;
+            @media screen and (max-width: $medium) {
+                border-right: 1px solid $green;
+            }
         }
         .calendar-parent .clndr .clndr-table tr:last-child .day,
         .calendar-parent .clndr .clndr-table tr:last-child .my-day {
-            border-bottom: 1px solid $gray;
+            border-bottom: 2px solid $green;
+            @media screen and (max-width: $medium) {
+                border-bottom: 1px solid $green;
+            }
         }
         .calendar-parent .clndr .clndr-table tr:last-child .empty,
         .calendar-parent .clndr .clndr-table tr:last-child .my-empty {
-            border-bottom: 1px solid $gray;
+            border-bottom: 2px solid $green;
+            @media screen and (max-width: $medium) {
+                border-bottom: 1px solid $green;
+            }
         }
             
         .clndr-next-button,
@@ -200,3 +242,18 @@
         }
     }
 }
+
+.calendar-section {
+    margin-top: 80px;
+
+    @media screen and (max-width: $medium) {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (min-width: $medium-start) {
+    .calendar-section {
+        padding-left: 40px;
+    }
+}
+

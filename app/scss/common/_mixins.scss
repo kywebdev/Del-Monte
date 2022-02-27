@@ -21,3 +21,225 @@
         }
     }
 }
+
+// screen reader only
+@mixin sr-only(){
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    top: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@function calculateRem($size) {
+      $remSize: $size / 16px;
+      @return ($remSize * 1rem);
+}
+
+// font sizing
+@mixin heading-200(){
+    color: $white;
+    font-family: $thunderhouse;
+    font-size: clamp(calculateRem(60px), 10vw, calculateRem(200px)); // min,ideal,max
+    line-height: 1;    
+}
+
+// font sizing
+@mixin heading-28($color:'',$lineheight:'',$faimly:''){
+    
+    @if $color != "" {
+        color: $color;
+    } 
+
+    @if $faimly != "" {
+        font-family: $faimly;
+    } @else {
+        font-family: $intro;
+    }
+    
+    font-size: clamp(calculateRem(20px), 5vw, calculateRem(28px)); // min,ideal,max 
+    font-weight: 500;
+    
+    @if $lineheight != "" {
+        line-height: $lineheight;
+    } @else {
+        line-height: 1;
+    }
+
+}
+
+@mixin heading-22($color:'',$lineheight:'',$faimly:''){
+    
+    @if $color != "" {
+        color: $color;
+    } 
+
+    @if $faimly != "" {
+        font-family: $faimly;
+    } @else {
+        font-family: $intro;
+    }
+    
+    font-size: clamp(calculateRem(18px), 5vw, calculateRem(22px)); // min,ideal,max 
+    font-weight: 500;
+    
+    @if $lineheight != "" {
+        line-height: $lineheight;
+    } @else {
+        line-height: 1;
+    }
+
+}
+
+
+// font sizing
+@mixin text-22($color:'',$lineheight:'',$faimly:''){
+    
+    @if $color != "" {
+        color: $color;
+    } 
+
+    @if $faimly != "" {
+        font-family: $faimly;
+    }
+    
+    font-size: clamp(calculateRem(18px), 5vw, calculateRem(22px)); // min,ideal,max 
+    
+    @if $lineheight != "" {
+        line-height: $lineheight;
+    } @else {
+        line-height: 1;
+    }
+
+}
+
+@mixin text-18($lineheight:''){
+    font-size: clamp(calculateRem(16px), 5vw, calculateRem(18px)); // min,ideal,max 
+}
+
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+
+@mixin image-mask($type,$max-width,$hover,$hideshadow: ''){
+    max-width: $max-width;
+    position: relative;
+
+    @if $hideshadow == ''{
+
+        @if $type == 'rectriangle-wide' {
+
+            // @if $hideshadow != ''{
+                &:after {
+                    filter: blur(5px);
+                    content: '';
+                    height: calc(100% - 25px);
+                    width: calc(100% - 20px);
+                    background-color: rgba(black,.5);
+                    position: absolute;
+                    top: 51%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    z-index: 1;
+                }            
+            // }
+
+        } @else {
+
+            // @if $hideshadow != ''{
+                &:after {
+                    filter: blur(10px);
+                    content: '';
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(black,.15);
+                    position: absolute;
+                    top: 51%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    z-index: 1;
+                }
+            // }
+
+        }
+    }
+
+    img {
+        height: auto;
+        @if $type == 'square' {
+            mask: url(../img/mask-square.svg);
+        }
+        @if $type == 'rectriangle-sm' {
+            mask: url(../img/mask-rectriangle-1.svg);
+        }
+        @if $type == 'rectriangle-lg' {
+            mask: url(../img/mask-rectriangle-2.svg);
+        }
+        @if $type == 'rectriangle-wide' {
+            mask: url(../img/mask-rectriangle-3.svg);
+        }
+        @if $type == 'rectriangle-wide-2' {
+            mask: url(../img/mask-rectriangle-4.svg);
+        }
+        mask: contain;
+        mask-position: center center;
+        mask-repeat: no-repeat round;                        
+        position: relative;
+        width: 100%;
+        z-index: 2;
+    }
+
+    @if $hover == true {
+        transition: all .2s ease-in-out;
+        &:hover {
+            transform: scale(1.07);
+            @media screen and (max-width: $small) {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+@include keyframes(no-anim) {
+  
+}
+
+@mixin animation ($stuff ) {
+    -webkit-animation: $stuff;
+    -moz-animation: $stuff;
+    -ms-animation: $stuff;
+    animation: $stuff;
+}
+
+@include keyframes(dropdown-arrow-toggle){
+    0% {
+        top: 50%;
+    }
+    50% {
+        top: 52%;
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+
+
+
+

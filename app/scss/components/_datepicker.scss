@@ -1,13 +1,19 @@
 .daterangepicker {
-    font-family: $arial;
+    font-family: $avenir !important;
     z-index: 9;
     left: 0px !important;
+    border: none !important;
+    border-radius: 0px !important;
 }
 .multipicker {
     position: relative;
     
     .daterangepicker {
-        top: 42px !important;
+        top: 70px !important;
+
+        @media screen and (max-width: $medium) {
+            top: 55px !important;
+        }
     }
 }
 .singlepicker {
@@ -24,10 +30,10 @@
     background-color: $green;
 }
 .daterangepicker td.in-range {
-    background-color: rgba($green, .2);
+    background-color: rgba($green, .2) !important;
 }
 .daterangepicker td.in-range.start-date, .daterangepicker td.in-range.end-date {
-    background-color: $green;
+    background-color: $green !important;
 }
 .daterangepicker td.in-range.start-date.off, .daterangepicker td.in-range.end-date.off {
     background-color: unset;
@@ -38,12 +44,11 @@
     }
 }
 .daterangepicker th.month {
-    color: $purple;
+    color: $green;
     font-size: 14px;
 }
 .daterangepicker.show-calendar .drp-buttons {
-    background-color: $purple;
-    border-radius: 0px 0px 4px 4px;
+    background-color: $green-100;
 }
 .daterangepicker .drp-selected {
     color: $white;
@@ -65,6 +70,9 @@
 .daterangepicker .drp-buttons .btn.applyBtn {
     background-color: $green;
 
+    @media screen and (max-width: 563px) {
+        margin-top: 5px;
+    }
     &:hover, &:active, &:focus {
         background-color: darken($green, 10%);
     }
@@ -80,4 +88,62 @@
 }
 .daterangepicker.opensright:after {
     left: 14px;
+}
+
+.filter-flyout .datepicker {
+    #datepicker {
+        font-family: $avenir;
+        background-color: transparent;
+        border: none;
+        color: $white;
+        @include text-22();
+        font-style: italic;
+        height: 65px;
+        outline: none;
+        width: 100%;
+    }
+    svg {
+        color: $white;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translate(0,-50%);
+        transition: all .2s ease-in-out;
+    }
+}
+
+@media screen and (max-width: $small) {
+    .filter-flyout .datepicker {
+        #datepicker {
+            padding-left: 30px;
+        }
+        svg {
+            height: 25px;
+            width: 25px;
+        }
+    }
+}
+
+@media screen and (min-width: $small-start) and (max-width: $medium) {
+    .filter-flyout .datepicker {
+        #datepicker {
+            padding-left: 50px;
+        }
+        svg {
+            height: 35px;
+            width: 35px;
+        }
+    }
+}
+
+@media screen and (min-width: $medium-start) {
+    .filter-flyout .datepicker {
+        #datepicker {
+            padding-left: 80px;
+        }
+        svg {
+            height: 65px;
+            width: 65px;
+        }
+    }
 }

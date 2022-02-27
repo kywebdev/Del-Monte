@@ -9,62 +9,18 @@
 @import "autoload/normalize";
 
 // site-wide styling
-@import "common/global";
 @import "common/mixins";
+@import "common/global";
+@import "common/typography";
 
 // layout
-@import "layouts/about";
-@import "layouts/article";
-@import "layouts/contact";
-@import "layouts/error";
-@import "layouts/events";
-@import "layouts/footer";
-@import "layouts/gallery";
-@import "layouts/general";
-@import "layouts/homepage";
-@import "layouts/mobile-nav";
-@import "layouts/news-events";
-@import "layouts/product-themes";
-@import "layouts/products";
-@import "layouts/recipe-themes";
-@import "layouts/recipes";
-@import "layouts/sidebar";
-@import "layouts/sitemap";
+@import "layouts/*.scss";
 
 // components
-@import "components/accordions";
-@import "components/buttons";
-@import "components/calendar";
-@import "components/cards";
-@import "components/datepicker";
-@import "components/events";
-@import "components/forms";
-@import "components/homepage-slider";
-@import "components/modals/cookie-prompt";
-@import "components/modals/search-modal";
-@import "components/modals/signup-updates";
-@import "components/modals/splash";
-@import "components/news";
-@import "components/nutrition-facts";
-@import "components/pagination";
-@import "components/priority-nav";
-@import "components/product-slider";
-@import "components/recipe-slider";
-@import "components/search-results";
-@import "components/timeline-modules/one-year-one-img";
-@import "components/timeline-modules/one-year-one-lg-img";
-@import "components/timeline-modules/two-years-one-img";
-@import "components/timeline-modules/two-years-three-imgs";
-@import "components/timeline-modules/two-years-three-lg-imgs";
-@import "components/tooltips";
+@import "components/*.scss";
 
 // vendor styles
-@import "vendor/jvectormap";
-@import "vendor/mmenu";
-@import "vendor/slick-theme";
-@import "vendor/slick";
-@import "vendor/remodal";
-@import "vendor/remodal-default-theme";
+@import "vendor/*.scss";
 
 // helper classes
 @import "common/helpers";
@@ -72,6 +28,8 @@
 // print layout
 @import "layouts/print";
 
+// libs
+@import "libs/*.scss";
 
 .mm-slideout {
     z-index: 101;

@@ -1,4 +1,46 @@
 .site-wrapper {
+    .homepage-content {
+        position: relative;
+        z-index: 2;
+
+        .heading {
+            margin-bottom: 40px;
+            
+            + br {
+                + .heading {
+                    margin-top: -20px;
+
+                    @media screen and (max-width: $small) {
+                        margin-top: -30px;
+                    }
+                }
+            }
+        }
+        hr {
+            max-width: none;
+        }
+    }
+    .leaves {
+        width: 100%;
+        margin-top: -150px;
+        margin-bottom: 107px;
+        position: relative;
+
+        @media screen and (max-width: $medium) {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding-top: 80px;
+        }
+        @media screen and (max-width: $small) {
+            padding-top: 60px;
+        }
+        img {
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    }
     .homepage-intro {
         position: relative;
         z-index: 11;
@@ -8,40 +50,21 @@
         @media screen and (max-width: $medium) {
             margin-bottom: 0px;
         }
-        @media screen and (max-width: $small) {
-            margin-bottom: 20px;
-        }
         h1 {
-            color: $purple;
+            margin-top: 0px;
         }
         &__text {
-            color: $purple;
-            font-size: 16px;
-            line-height: 22px;
-            font-weight: bold;
-            font-style: italic;
+            font-size: 22px;
+            line-height: 30px;
+            font-weight: 500;
             width: 100%;
-            max-width: 750px;
-            margin: -10px auto 5px;
-        }
-        a {
-            display: block;
-            max-width: 750px;
-            margin: 0px auto;
-        }
-        .btn {
-            font-size: 18px;
-            letter-spacing: 1px;
-            background-color: $green;
-            color: $white;
-            text-transform: uppercase;
-            padding: 8px 30px;
-            border-radius: 10px;
-            transition: .5s ease;
-            display: inline-block;
-            width: auto;
-            max-width: 90%;
-            margin-top: 10px;
+            max-width: 670px;
+            margin: 0px auto 30px;
+
+            @media screen and (max-width: $small) {
+                font-size: 18px;
+                line-height: 26px;
+            }
         }
     }
     .video {
@@ -58,305 +81,224 @@
         .cell {
             position: relative;
         }
-        a {
-            display: block;
-            position: relative;
-            z-index: 1;
+        .homepage-products {
+            p {
+                max-width: 790px;
+                margin-left: 40px;
+
+                @media screen and (max-width: $medium) {
+                    margin-left: 0px;
+                }
+            }
         }
         .quick-links {
-            margin-bottom: 10px;
+            margin: 40px -20px 170px;
     
+            @media screen and (max-width: $large) {
+                margin-bottom: 90px;
+            }
             @media screen and (max-width: $small) {
-                margin-bottom: 30px;
+                margin-bottom: 60px;
             }
         }
         .quick-link {
             text-align: center;
+            position: relative;
+            padding-left: 20px;
+            padding-right: 20px;
+            transform: scale(1);
+            transition: .35s ease;
     
+            @media screen and (max-width: $large) {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
             @media screen and (max-width: $medium) {
                 margin-bottom: 20px;
             }
             @media screen and (max-width: $small) {
                 margin-bottom: 10px;
             }
-            &:nth-of-type(1) {
-                a {
-                    &:hover, &:active, &:focus {
-                        h2 {
-                            color: #a45a96;
-                        }
-                    }
+            &:hover {
+                transform: scale(1.08);
+
+                @media screen and (max-width: $small) {
+                    transform: scale(1);
                 }
             }
-            &:nth-of-type(2) {
-                a {
-                    &:hover, &:active, &:focus {
-                        h2 {
-                            color: $green;
-                        }
-                    }
+            p {
+                position: absolute;
+                bottom: 40px;
+                left: 55px;
+                font-family: $thunderhouse;
+                font-size: 55px;
+                line-height: 45px;
+                font-weight: normal;
+                color: $white;
+                margin-bottom: 0px;
+                text-shadow: 2px 2px 4px rgba($black, .5);
+
+                @media screen and (max-width: 1700px) {
+                    font-size: 3vw;
+                    line-height: 2vw;
+                    left: 3.5vw;
                 }
-            }
-            &:nth-of-type(3) {
-                a {
-                    &:hover, &:active, &:focus {
-                        h2 {
-                            color: $red;
-                        }
-                    }
-                }
-            }
-            h2 {
-                color: $purple;
-                text-align: center;
-                font-size: 35px;
-                line-height: 35px;
-                margin: 5px auto;
-                transition: .3s ease;
-        
-                @media screen and (max-width: 1920px) {
-                    font-size: 1.8vw;
-                    line-height: 1.8vw;
-                }
-                @media screen and (max-width: 1000px) {
-                    font-size: 26px;
-                    line-height: 26px;
+                @media screen and (max-width: $medium) {
+                    font-size: 4.3vw;
+                    left: 4vw;
                 }
                 @media screen and (max-width: $small) {
-                    position: relative;
-                    z-index: 1;
+                    font-size: 55px;
+                    line-height: 45px;
+                    bottom: 50px;
+                    left: 55px;
+                }
+                @media screen and (max-width: 380px) {
+                    font-size: 45px;
+                    line-height: 35px;
+                    bottom: 40px;
                 }
             }
             img {
-                position: relative;
-                top: 0px;
-                transition: .3s ease;
+                width: 100%;
             }
             a {
                 @media screen and (max-width: $small) {
                     z-index: initial;
                 }
-                &:hover, &:active, &:focus {
-                    img {
-                        top: -20px;
-                    }
-                    
-                }
             }
         }
     }
-    .product-locator-tile {
-        background-color: $red;
-        padding: 75px 0px;
-        background-image: url('../img/strawberry-pattern.png');
-        background-repeat: repeat-y;
-        background-position: 21%;
-        background-size: 33%;
-        position: relative;
-        height: 100%;
-    
-        @media screen and (max-width: 1000px) {
-            padding: 100px 0px 0px;
-            background-repeat: no-repeat;
-            background-position: center top;
-            background-size: 75%;
-        }
-        &:after {
-            display: block;
-            content: '';
-            width: 30px;
-            height: 100%;
-            background-image: url('../img/tile-rip-right.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 0px;
-            right: 0px;
-        }
-        &__text {
-            background-color: $red;
-            padding: 25px 14%;
-    
-            h2 {
-                color: $white;
-                margin-top: 0px;
-                font-size: 28px;
-    
-                @media screen and (max-width: 1000px) {
-                    text-align: left;
-                }
-            }
-            p {
-                color: $white;
-                font-size: 16px;
-                font-weight: bold;
-                font-style: italic;
-                line-height: 22px;
-                margin-bottom: 0px;
-            }
-        }
-    }
-    .product-locator-img {
-        text-align: center;
-        align-self: center;
-        padding-left: 15px !important;
-    
-        @media screen and (max-width: $small) {
-            padding: 20px 0px !important;
-        }
-        img {
-            display: block;
-            margin: 0px auto;
-        }
-        .btn {
-            display: inline-block;
-            font-size: 18px;
-            letter-spacing: 1px;
-            background-color: $red;
-            color: $white;
-            text-transform: uppercase;
-            padding: 8px 30px;
-            border-radius: 10px;
-            transition: .5s ease;
-            margin-top: 5px;
+    .featured-recipe {
+        margin-bottom: 90px;
 
-            @media screen and (max-width: $small) {
-                margin-bottom: 10px;
-                display: inline-block;
-            }
-        }
-    }
-    .featured-content {
-        position: relative;
-        width: 100%;
-        
-        @media screen and (max-width: 1200px) {
-            height: 300px;
-        }
         @media screen and (max-width: $small) {
-            height: auto;
+            margin-bottom: 60px;
         }
-        &__img {
-            height: 100%;
+        .col-lg-4 {
+            display: flex;
+            align-items: center;
 
-            @media screen and (max-width: $small) {
-                height: auto;
-            }
-            img {
+            > div {
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
+            }
+        }
+        .col-lg-8 {
+            padding-left: 50px;
+            display: flex;
+            align-items: center;
 
-                @media screen and (max-width: $small) {
-                    height: auto;
-                    object-fit: unset;
+            @media screen and (max-width: $large) {
+                padding-left: 15px;
+                margin-top: 40px;
+            }
+            > div {
+                width: 100%;
+
+                img {
+                    width: 100%;
                 }
             }
         }
-        &__overlay {
-            position: absolute;
-            bottom: 5%;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 20px;
-            width: 100%;
-            max-width: 520px;
-            z-index: 1;
-    
-            @media screen and (max-width: $small) {
+        &__heading {
+            width: 160%;
+            
+            @media screen and (max-width: $large) {
+                width: 100%;
+            }
+            h2 {
+                width: auto;
                 position: relative;
-                bottom: auto;
-                left: auto;
-                transform: none;
-                padding: 30px 0px 0px;
-            }
-            &.full-width {
-                max-width: none;
-            }
-            &.light-theme {
-                background-color: rgba($white, .5);
-    
+                z-index: 1;
+                display: inline-block;
+                margin-bottom: 15px;
+                margin-top: 0px;
+
                 @media screen and (max-width: $small) {
-                    background-color: transparent;
-                }
-                .featured-content__text {
-                    h2 {
-                        color: $purple;
-                    }
-                    p {
-                        color: $purple;
-                    }
-                    .btn {
-                        background-color: $purple;
-                        color: $white;
-                        margin-top: 5px;
-                    }
-                }
-            }
-            &.dark-theme {
-                background-color: rgba($black, .4);
-    
-                @media screen and (max-width: $small) {
-                    background-color: transparent;
-                }
-                .featured-content__text {
-                    h2 {
-                        color: $white;
-    
-                        @media screen and (max-width: $small) {
-                            color: $purple;
-                        }
-                    }
-                    p {
-                        color: $white;
-    
-                        @media screen and (max-width: $small) {
-                            color: $purple;
-                        }
-                    }
-                    .btn {
-                        background-color: $green;
-                        color: $white;
-                        margin-top: 5px;
-                    }
+                    margin-bottom: 10px;
                 }
             }
         }
         &__text {
-            text-align: center;
-    
-            h2 {
-                font-size: 28px;
-                margin-top: 0px;
+            margin-left: 40px;
+
+            @media screen and (max-width: $medium) {
+                margin-left: 0px;
             }
             p {
-                font-size: 16px;
-                line-height: 22px;
-                font-weight: bold;
-                font-style: italic;
-                width: 100%;
-                max-width: 480px;
-                margin: 10px auto;
+                margin-bottom: 30px;
             }
             .btn {
-                display: inline-block;
-                font-size: 18px;
-                letter-spacing: 1px;
-                text-transform: uppercase;
-                padding: 8px 30px;
-                border-radius: 10px;
-                transition: .5s ease;
+                text-align: left;
+            }
+        }
+    }
+    .featured-product {
+        background-image: url('../img/pineapple-bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 115px 0px 140px;
+        text-align: center;
+        margin-bottom: 170px;
+
+        @media screen and (max-width: $large) {
+            padding: 125px 0px;
+            margin-bottom: 90px;
+        }
+        @media screen and (max-width: $small) {
+            padding: 80px 0px;
+            margin-bottom: 60px;
+            background-position: right;
+        }
+        .row {
+            justify-content: flex-end;
+        }
+        &__text {
+            background-color: $white;
+            max-width: 625px;
+
+            @media screen and (max-width: $large) {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @media screen and (max-width: $small) {
+                max-width: 90%;
+            }
+            
+            .image-edges__container {
+                padding: 120px 80px;
+                @media screen and (max-width: $large) {
+                    padding: 120px 50px;
+                }
+                @media screen and (max-width: $small) {
+                    padding: 50px 25px;
+                }
+            }
+            h2 {
+                margin-bottom: 60px;
+
+                @media screen and (max-width: $small) {
+                    margin-bottom: 40px;
+                }
+            }
+            p {
+                margin-bottom: 50px;
+
+                @media screen and (max-width: $small) {
+                    margin-bottom: 30px;
+                }
             }
         }
     }
     .video-content {
-        text-align: center;
-        align-self: center;
+        max-width: 710px;
+        margin-left: auto;
     
+        @media screen and (max-width: $large) {
+            max-width: none;
+        }
         &__video {
-            width: 85%;
-            max-width: 430px;
-            margin: 30px auto 15px;
             @include aspect-ratio(16, 9);
     
             @media screen and (max-width: $small) {
@@ -372,7 +314,6 @@
             display: inline-block;
             font-size: 18px;
             letter-spacing: 1px;
-            background-color: #a45a96;
             color: $white;
             text-transform: uppercase;
             padding: 8px 30px;
@@ -389,53 +330,69 @@
             }
         }
     }
-    .video-content-tile {
-        background-color: #a45a96;
-        padding: 75px 0px;
-        background-image: url('../img/orange-pattern.png');
-        background-repeat: repeat-y;
-        background-position: 78%;
-        background-size: 33%;
-        position: relative;
-        height: 100%;
-    
-        @media screen and (max-width: 1000px) {
-            padding: 100px 0px 0px;
-            background-repeat: no-repeat;
-            background-position: center top;
-            background-size: 75%;
+    .our-brands {
+        margin-bottom: 105px;
+
+        @media screen and (max-width: $large) {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 90px;
         }
-    
-        &:before {
-            display: block;
-            content: '';
-            width: 30px;
-            height: 100%;
-            background-image: url('../img/tile-rip-left.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: 0px;
-            left: -13px;
+        @media screen and (max-width: $small) {
+            margin-bottom: 60px;
+        }
+        &__heading {
+            width: 100%;
         }
         &__text {
-            background-color: #a45a96;
-            padding: 25px 14%;
-    
-            h2 {
-                color: $white;
-                margin-top: 0px;
-                font-size: 28px;
-                text-align: right;
+            width: 100%;
+        }
+        p, a {
+            margin-left: 40px;
+
+            @media screen and (max-width: $medium) {
+                margin-left: 0px;
             }
-            p {
-                color: $white;
-                font-size: 16px;
-                font-weight: bold;
-                font-style: italic;
-                line-height: 22px;
-                margin-bottom: 0px;
-                text-align: right;
+        }
+        p {
+            max-width: 790px;
+            margin-bottom: 0px;
+
+            a {
+                display: inline;
+                margin-left: 0px;
+            }
+            em {
+                color: $green;
+            }
+        }
+        &__logos {
+            &__logo {
+                margin-top: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                a {
+                    
+                    transform: scale(1);
+                    transition: .35s ease;
+            
+                    &:hover {
+                        transform: scale(1.15);
+        
+                        @media screen and (max-width: $small) {
+                            transform: scale(1);
+                        }
+                    }
+                }
+                img {
+                    max-width: 85%;
+                }
             }
         }
     }

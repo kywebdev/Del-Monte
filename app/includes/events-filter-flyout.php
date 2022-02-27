@@ -6,9 +6,10 @@
     </div>
     <form class="form">
         <div class="filter-flyout__section">
-            <span class="filter-flyout__section__title">Date</span>
+            <span class="filter-flyout__section__title sr-only">Date</span>
             <div class="datepicker multipicker">
                 <input type="text" id="datepicker" value=""/>
+                <svg class="icon svg-icon-calendar" aria-hidden="true"><use xlink:href="#svg-icon-calendar"></use></svg>
             </div>
         </div>
         <div class="filter-flyout__section">

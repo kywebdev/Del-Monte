@@ -11,46 +11,63 @@
         <div class="site-wrapper general contact">
             <?php include('includes/mobile-nav.php'); ?>
             <div class="site">
-                <?php include('includes/sidebar.php'); ?>
-                <main class="bg-texture-cabbage">
+                <?php include('includes/header.php'); ?>
+                <main id="main">
                     <section class="main-content-wrapper">
-                        <div class="section-container">
-                        <nav class="breadcrumbs" aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">PagePath</a></li>
-                                <li class="breadcrumb-item"><a href="#">BreadCrumb</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">General Page</li>
-                            </ol>
+                        <nav class="breadcrumb__nav" aria-label="breadcrumb">
+                            <div class="section-container">
+                                <ol class="breadcrumb__list">
+                                    <li class="breadcrumb__list-item"><a href="index.php">Home</a></li>
+                                    <li class="breadcrumb__list-item"><a href="about.php">About Us</a></li>
+                                    <li class="breadcrumb__list-item --active" aria-current="page">Contact Us</li>
+                                </ol>
+                            </div>
                         </nav>
-                        <div class="campaign-hero rip-1">
-                            <picture>
-                                <source srcset="img/contact-hero-desktop.jpg" media="(min-width: 901px)">
-                                <img src="img/contact-hero-mobile.jpg" alt="" />
-                            </picture>
-                        </div>
-                        <h1>Contact Us</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis</p>
-                        <p><strong><em>Short CTA copy to entice user to complete the form for sign-ups and/or to get access to gated content.  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula.</em></strong></p>
-                        <h2>Customer Information</h2>
-                        <form class="contact-form form">
+                        <div class="section-container">
+                            <div class="section__header">
+                                <div class="section__header-container">
+                                    <div class="page__title-container">
+                                        <h1>
+                                            <span class="page__title --red"><span>we would love to </span></span><br/>
+                                            <span class="page__title --red"><span>heaR fRom you</span></span>
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        <p class="contact-form__intro">If you did not find the information you are looking for in the Frequently Asked Questions, please complete the contact form below and someone will be in touch with you as soon as possible.</p>
+                        <form class="contact-form form" action="#thankyou">
                             <div class="container-fluid">
                                 <div class="row">
-                                    <div class="col-sm-6">
-                                        <label for="fname-contact">First Name</label>
-                                        <input type="text" id="fname-contact" placeholder="First Name" />
+                                    <div class="col-12">
+                                        <h2 class="contact-form__title">Customer Information</h2>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <label for="lname-contact">Last Name</label>
-                                        <input type="text" id="lname-contact" placeholder="Last Name" />
+                                    <div class="col-sm-6 contact-form__item">
+                                        <label for="fname-contact"><sup>*</sup>First Name</label>
+                                        <input type="text" id="fname-contact">
                                     </div>
-                                    <div class="col-sm-6">
-                                        <label for="email-updates-contact">Email</label>
-                                        <input type="email" id="email-updates-contact" placeholder="Email" />
+                                    <div class="col-sm-6 contact-form__item">
+                                        <label for="lname-contact"><sup>*</sup>Last Name</label>
+                                        <input type="text" id="lname-contact">
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-6 contact-form__item">
+                                        <label for="email-updates-contact"><sup>*</sup>Email</label>
+                                        <input type="email" id="email-updates-contact">
+                                    </div>
+                                    <div class="col-sm-6 contact-form__item">
+                                        <div class="custom_select" tabindex="0">
+                                            <label for="state-contact"><sup>*</sup>Country</label>
+                                            <select id="state-contact">
+                                                <option disabled selected>Country</option>
+                                                <option>United States</option>
+                                                <option>Canada</option>
+                                                <option>Mexico</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 contact-form__item">
                                         <div class="contact-reason">
-                                            <label for="reason">Reason for Comment</label>
                                             <div class="custom_select" tabindex="0">
+                                                <label for="reason">Reason for Comment</label>
                                                 <select id="reason">
                                                     <option disabled selected>Reason for Comment</option>
                                                     <option>Concern</option>
@@ -61,24 +78,24 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12">
-                                        <hr />
+                                    <div class="col-sm-12">
+                                        <button class="contact-reason-button btn --green" disabled="disabled">Continue</button>
                                     </div>
                                     <div class="col-12 gated-content">
                                         <div class="row">
-                                            <div class="col-12">
-                                                <label for="addr1-contact">Address Line 1</label>
-                                                <input type="text" id="addr1-contact" placeholder="Address Line 1" />
+                                            <div class="col-12 contact-form__item">
+                                                <label for="addr1-contact"><sup>*</sup>Address Line 1</label>
+                                                <input type="text" id="addr1-contact" />
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-12 contact-form__item">
                                                 <label for="addr2-contact">Address Line 2</label>
-                                                <input type="text" id="addr2-contact" placeholder="Address Line 2" />
+                                                <input type="text" id="addr2-contact"  />
                                             </div>
-                                            <div class="col-md-5 col-sm-4">
-                                                <label for="city-contact">City</label>
-                                                <input type="text" id="city-contact" placeholder="City" />
+                                            <div class="col-md-5 col-sm-4 contact-form__item">
+                                                <label for="city-contact"><sup>*</sup>City</label>
+                                                <input type="text" id="city-contact" />
                                             </div>
-                                            <div class="col-md-3 col-sm-4">
+                                            <div class="col-md-3 col-sm-4 contact-form__item">
                                                 <div class="custom_select" tabindex="0">
                                                     <label for="state-contact">State</label>
                                                     <select id="state-contact">
@@ -87,11 +104,11 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4">
-                                                <label for="zip-contact">Zip</label>
-                                                <input type="text" id="zip-contact" placeholder="Zip" />
+                                            <div class="col-sm-4 contact-form__item">
+                                                <label for="zip-contact"><sup>*</sup>Zip</label>
+                                                <input type="text" id="zip-contact" />
                                             </div>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-6 contact-form__item">
                                                 <div class="custom_select" tabindex="0">
                                                     <label for="country-contact">Country</label>
                                                     <select id="country-contact">
@@ -100,32 +117,30 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-6 contact-form__item">
                                                 <label for="phone-contact">Phone</label>
-                                                <input type="tel" id="phone-contact" placeholder="Phone" />
+                                                <input type="tel" id="phone-contact" />
                                             </div>
-                                            <div class="col-12">
-                                                <h2>Product Information</h2>
-                                            </div>
-                                            <div class="col-sm-4">
+                                            <h2 class="col-12 contact-form__title">Product Information</h2>
+                                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 contact-form__item">
                                                 <label for="product-name-contact">Name of Product</label>
-                                                <input type="text" id="product-name-contact" placeholder="Name of Product" />
+                                                <input type="text" id="product-name-contact" />
                                             </div>
-                                            <div class="col-sm-4">
-                                                <label for="purchase-date-contact">Date of Purchase</label>
+                                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 contact-form__item">
                                                 <div class="singlepicker">
-                                                    <input type="text" id="datepicker" placeholder="Date of Purchase" />
+                                                    <label for="datepicker">Date of Purchase</label>
+                                                    <input type="text" id="datepicker" />
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 contact-form__item">
                                                 <label for="store-purchased-contact">Name of Store of Purchase</label>
-                                                <input type="text" id="store-purchased-contact" placeholder="Name of Store of Purchase" />
+                                                <input type="text" id="store-purchased-contact" />
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 contact-form__item">
                                                 <label for="city-purchased-contact">City of Store of Purchase</label>
-                                                <input type="text" id="city-purchased-contact" placeholder="City of Store of Purchase" />
+                                                <input type="text" id="city-purchased-contact"  />
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 contact-form__item">
                                                 <div class="custom_select" tabindex="0">
                                                     <label for="state-purchased-contact">State of Store of Purchase</label>
                                                     <select id="state-purchased-contact">
@@ -134,149 +149,68 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 contact-form__item">
                                                 <label for="zip-purchased-contact">Zip Code of Store of Purchase</label>
-                                                <input type="text" id="zip-purchased-contact" placeholder="Zip Code of Store of Purchase" />
+                                                <input type="text" id="zip-purchased-contact" />
                                             </div>
-                                            <div class="col-12">
+                                            <div class="col-12 contact-form__item">
                                                 <label for="concern-contact">Please describe your concern</label>
-                                                <textarea id="concern-contact" placeholder="Please describe your concern"></textarea>
+                                                <textarea id="concern-contact"></textarea>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 message">
+                                    <div class="col-12 contact-form__item message">
                                         <label for="message-contact">Type your message here</label>
-                                        <textarea id="message-contact" placeholder="Type your message here"></textarea>
+                                        <textarea id="message-contact"></textarea>
                                     </div>
-                                    <div class="col-12 text-center">
-                                        <input type="checkbox" id="iagree-contact" disabled />
-                                        <label for="iagree-contact">‘I agree, to Del Monte’s<sup>®</sup> terms-of-conditions (link) and privacy policy’ (link), Dummy Text Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</label>
+                                    <div class="col-12 iagree">
+                                        <input type="checkbox" id="iagree-contact" />
+                                        <label for="iagree-contact">
+                                            ‘I agree, to Del Monte’s® terms-of-conditions (link) and privacy policy’ (link), Dummy Text Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                                        </label>
                                     </div>
-                                    <div class="col-12">
-                                        <?php include('includes/captcha.php'); ?>
-                                    </div>
-                                    <div class="col-12">
-                                        <input type="submit" id="submit-contact" value="Submit" disabled />
+                                    <div class="col-12 submit">
+                                        <input id="submit-contact" class="btn --green" type="submit" value="Submit" disabled />
                                     </div>
                                 </div>
                             </div>
                         </form>
                         <div class="contact-info">
-                            <p>Please feel free to send us an email directly to our consumer service email</p>
-                            <p><strong><a href="mailto:consumers@freshdelmonte.com">consumers@freshdelmonte.com</a></strong></p>
-                            <p>You can also contact us at:<br />
-                                <strong>305-520-8668 (Phone)<br />
-                                Del Monte Fresh Produce, P.O. Box 149222<br />
-                                Coral Gables, FL 33114-9222 USA</strong></p>
+                            <p>Please feel free to contact the Consumer Affairs Department directly. <br/> <a class="contact-info__link" href="mailto:consumers@freshdelmonte.com">consumers@freshdelmonte.com</a></p>
+                            <ul class="contact-info__list">
+                                <li class="contact-info__list-item">
+                                    <a href="tel:+1-305-520-8668">305-520-8668</a>
+                                </li>
+                                <li class="contact-info__list-item --no-bullet">
+                                    <address class="contact-info__address">
+                                        <span>Del Monte Fresh Produce N.A., Inc.</span>
+                                        <span>P.O. Box 149222</span>
+                                        <span>Coral Gables, FL 33114-9222 USA</span>
+                                    </address>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="container-fluid cards featured-recipes">
-                            <div class="row">
-                                <a href="" class="col-md-4 col-sm-6">
-                                    <div class="card rating-star">
-                                        <div class="card__img">
-                                            <img src="img/featured-recipe.jpg" alt="" class="card-bg-img" />
-                                        </div>
-                                        <div class="card__text">
-                                            <p class="card__text__heading">Featured Recipe Title</p>
-                                            <p class="card__text__desc">Fearured Recipe FPO Dummy Text, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean</p>
-                                            <div class="card__rating">
-                                                <ul class="stars">
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-2-5.png" alt="" />
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="" class="col-md-4 col-sm-6">
-                                    <div class="card rating-star">
-                                        <div class="card__img">
-                                            <img src="img/featured-recipe.jpg" alt="" class="card-bg-img" />
-                                        </div>
-                                        <div class="card__text">
-                                            <p class="card__text__heading">Featured Recipe Title</p>
-                                            <p class="card__text__desc">Fearured Recipe FPO Dummy Text, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean</p>
-                                            <div class="card__rating">
-                                                <ul class="stars">
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-2-5.png" alt="" />
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="" class="col-md-4 col-sm-6">
-                                    <div class="card rating-star">
-                                        <div class="card__img">
-                                            <img src="img/featured-recipe.jpg" alt="" class="card-bg-img" />
-                                        </div>
-                                        <div class="card__text">
-                                            <p class="card__text__heading">Featured Recipe Title</p>
-                                            <p class="card__text__desc">Fearured Recipe FPO Dummy Text, Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean</p>
-                                            <div class="card__rating">
-                                                <ul class="stars">
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-5-5.png" alt="" />
-                                                    </li>
-                                                    <li>
-                                                        <img src="img/blue-star-2-5.png" alt="" />
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                        <div class="remodal thankyou-modal" data-remodal-id="thankyou">
+                            <button data-remodal-action="close" class="remodal-close"></button>
+                            <div class="remodal-content">
+                                <h2>
+                                    <span class="page__title --red"><span>thank you foR </span></span><br/>
+                                    <span class="page__title --red"><span>filling out ouR foRm!</span></span>
+                                </h2>
+                                <p>We will get back to you as soon as we can. In the meantime, continue checking out our site!</p>
+                                <a href="index.php" class="btn --green">Home</a>
                             </div>
                         </div>
                         <?php include('includes/cards.php'); ?>
                         </div>
-                        <a href="#top" class="back-to-top">
-                            <img src="img/back-to-top.png" alt="" />
-                        </a>
+                        <?php include('includes/footer.php'); ?>
                     </section>
-                    <?php include('includes/mobile-footer.php'); ?>
                 </main>
-                <?php include('includes/sitemap.php'); ?>
             </div>
             <?php include('includes/cookies-prompt.php'); ?>
         </div>
-        <?php include('includes/search-modal.php'); ?>
         <?php include('includes/updates-modal.php'); ?>
+        <?php include('img/svg-sprite/svg/symbols.svg'); ?>
         <?php include('includes/scripts.php'); ?>
     </body>
 </html>

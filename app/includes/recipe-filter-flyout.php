@@ -1,7 +1,7 @@
 <div class="filter-flyout">
     <div class="close-flyout">
         <a href="">
-            <span class="fas fa-times"></span>
+            <img src="img/close-white.svg" alt="" />
         </a>
     </div>
     <form class="form" action="recipes-mealtype.php">

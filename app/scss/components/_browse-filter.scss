@@ -1,0 +1,223 @@
+.browse-filters {
+    &.nav-up {
+        @media screen and (max-width: $medium) {
+            position: fixed;
+            top: 89px;
+            background-color: $white;
+            width: 100%;
+            display: block;
+            padding-top: 15px;
+            padding-left: 5%;
+            margin-left: -5%
+        }
+        .browse-by {
+            @media screen and (max-width: $medium) {
+                margin-top: 0px;
+                margin-bottom: 15px;
+            }
+        }
+        .fa-tag {
+            @media screen and (max-width: $medium) {
+                top: -4px;
+                margin-left: 0px;
+            }
+        }
+        .selected-filters {
+            @media screen and (max-width: $medium) {
+                position: relative;
+                top: -7px;
+                width: calc(100% - 276px);
+            }
+            @media screen and (max-width: $small) {
+                width: calc(100% - 206px);
+            }
+        }
+        .filter-flyout {
+            @media screen and (max-width: $medium) {
+                width: 98%;
+                margin-left: 1%;
+            }
+            &.is-open {
+                @media screen and (max-width: $medium) {
+                    top: 56px;
+                    max-height: calc(100vh - 145px);
+                    overflow-y: auto;
+                }
+            }
+        }
+    }
+}
+.browse-by {
+    margin: 50px 0px 35px 40px;
+
+    @media screen and (max-width: $medium) {
+        margin: 50px 0px 25px;
+    }
+}
+.fa-tag {
+    font-size: 20px;
+    position: relative;
+    top: 0px;
+}
+.filter-flyout {
+    padding: 25px 60px 60px;
+    position: absolute;
+    top: 300px;
+    left: 0px;
+    z-index: 2;
+    background-color: $green;
+    box-shadow: 6px 6px 13px rgba($black, .24);
+    width: calc(100% - 40px);
+    margin-left: 40px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s ease-in-out;
+
+    @media screen and (max-width: $medium) {
+        width: 100%;
+        margin-left: 0px;
+        padding: 5px 40px 40px;
+    }
+    @media screen and (max-width: $small) {
+        padding: 15px 30px 40px;
+        top: 290px;
+    }
+    &.is-open {
+        opacity: 1;
+        visibility: visible;
+        top: 310px;
+
+        @media screen and (max-width: 1500px) {
+            top: 270px;
+        }
+        @media screen and (max-width: $medium) {
+            top: 250px;
+        }
+        @media screen and (max-width: $small) {
+            top: 200px;
+        }
+    }
+    .close-flyout {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+
+        a {
+            font-size: 22px;
+            color: $white;
+            position: relative;
+            z-index: 1;
+
+            &:hover, &:active, &:focus {
+                color: $green-100;
+            }
+        }
+    }
+    .form {
+        width: 100%;
+        margin-top: 0px;
+        padding: 0px;
+
+        input[type="submit"] {
+            display: inline-block;
+            margin-top: 35px;
+            margin-bottom: 0px !important;
+            border: 2px solid $white;
+            border-radius: 100px;
+            padding: 25px 40px 23px;
+            font-size: 22px;
+            width: auto;
+            margin-bottom: 10px;
+            transition: .2s ease-in-out;
+            background-color: $white;
+            color: $green;
+            font-family: $intro;
+
+            @media screen and (max-width: $small) {
+                padding: 15px 30px 13px;
+                font-size: 18px;
+                margin-top: 25px;
+            }
+            &:hover {
+                background-color: transparent;
+                color: $white;
+            }
+        }
+    }
+    &__section {
+        border-bottom: 2px solid $white;
+        padding: 35px 0px 15px;
+
+        @media screen and (max-width: $small) {
+            padding: 25px 0px 15px;
+        }
+        &__title {
+            display: block;
+            margin: 0px 0px 25px;
+            color: $white;
+            font-family: $intro;
+            font-size: 22px;
+
+            @media screen and (max-width: $small) {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+        }
+        &__filter {
+            display: inline-block;
+            margin-right: 10px;
+
+            input {
+                display: none;
+
+                &:checked {
+                    + label {
+                        border: 2px solid $light-green;
+                        background-color: $light-green;
+                        color: $white;
+                        background-image: none;
+                        font-weight: bold;
+
+                        &:hover {
+                            background-color: $light-green;
+                            color: $white !important;
+                        }
+                    }
+                }
+                + label {
+                    border: 2px solid $white;
+                    border-radius: 100px;
+                    padding: 15px 25px 13px !important;
+                    font-size: 18px !important;
+                    font-weight: normal;
+                    font-style: normal !important;
+                    width: auto;
+                    margin-bottom: 10px;
+                    transition: .2s ease-in-out;
+                    background-image: none;
+                    position: relative;
+                    overflow: visible;
+                    height: auto;
+                    clip: unset;
+                    margin: 0px 0px 15px !important;
+                    color: $white !important;
+                    font-family: $avenir;
+                    cursor: pointer;
+
+                    @media screen and (max-width: $small) {
+                        font-size: 16px !important;
+                        padding: 10px 20px 8px !important;
+                        margin: 0px 0px 10px !important;
+                    }
+                    &:hover {
+                        background-color: $white;
+                        color: $green !important;
+                    }
+                    &:after {
+                        display: none !important;
+                    }
+                }
+            }
+        }
+    }
+}

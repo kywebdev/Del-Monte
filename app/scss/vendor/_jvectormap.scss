@@ -15,9 +15,9 @@ svg {
     display: none;
     border: solid 1px #CDCDCD;
     border-radius: 3px;
-    background: $purple;
+    background: $green;
     color: white;
-    font-family: $arial;
+    font-family: $avenir;
     font-size: 14px;
     padding: 2px 3px;
     z-index: 1;
@@ -27,7 +27,7 @@ svg {
     position: absolute;
     left: 8px;
     border-radius: 3px;
-    background: $purple;
+    background: $green;
     border: 1px solid $white;
     padding: 3px;
     color: white;
@@ -38,8 +38,8 @@ svg {
 }
 
 .jvectormap-zoomin, .jvectormap-zoomout {
-    width: 17px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
 }
 
 .jvectormap-zoomin {

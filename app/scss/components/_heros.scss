@@ -1,0 +1,35 @@
+.page-hero {
+    position: relative;
+    margin-bottom: clamp(30px,5vw,60px);
+    width: 100%;
+
+    @media screen and (max-width: $medium) {
+        margin-bottom: 50px;
+    }
+    @media screen and (max-width: $small) {
+        margin-bottom: 30px;
+    }
+}
+h1.page-hero__title {
+    padding: 15px;
+}
+.page-hero__image {
+    display: block;
+    position: relative;
+    z-index: 1;
+    img {
+        width: 100%;
+    }
+}
+h1.page-hero__title {
+    @include heading-200();
+    left: 50%;
+    margin: 0 !important;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    z-index: 2;
+    padding: 0px 5%;
+    transform: translate(-50%,-50%);
+}

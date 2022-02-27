@@ -3,6 +3,20 @@
         .col-md-4 {
             padding: 15px;
         }
+        .load-more {
+            margin-top: 65px;
+
+            @media screen and (max-width: $small) {
+                margin-top: 30px;
+                margin-bottom: -20px;
+            }
+            p {
+                color: $green;
+                font-size: 18px;
+                line-height: 25px;
+                font-style: italic;
+            }
+        }
     }
     .gallery-filters {
         .results-filtering {
@@ -127,57 +141,50 @@
             }
         }
         .one-third {
-            + .col-lg-8 {
-                a {
-                    height: 100%;
-
-                    .card__img {
-                        height: 100%;
-
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                    }
-                }
+            .row {
+                margin-left: 0px;
+                margin-right: 0px;
+                padding: 15px 0px 0px !important;
             }
-            a {
-                + a {
-                    margin-top: 15px;
+            .card {
+                + .card {
+                    margin-top: 25px;
+
+                    @media screen and (max-width: $large) {
+                        margin-top: 0px;
+                    }
+                    @media screen and (max-width: 900px) {
+                        margin-top: 30px;
+                    }
                 }
             }
         }
-        .row {
-            &:first-of-type {
-                .one-third {
-                    @media screen and (max-width: 900px) {
-                        display: flex;
+    }
+    &.products-landing {
+        .product-cards {
+            .card {
+                margin-bottom: 30px;
+
+                @media screen and (max-width: $large) {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+    &.gallery-page {
+        .product-cards {
+            &.global-cards {
+                .card {
+                    margin-bottom: 30px;
+    
+                    @media screen and (max-width: $large) {
+                        margin-bottom: 0px;
+                    }
+                    @media screen and (max-width: $medium) {
+                        margin-bottom: 30px;
                     }
                     @media screen and (max-width: $small) {
-                        display: block;
-                    }
-                    a {
-                        @media screen and (max-width: 900px) {
-                            width: 50%;
-                            padding-right: 15px;
-                        }
-                        @media screen and (max-width: $small) {
-                            width: 100%;
-                            padding-right: 0px;
-                            margin-bottom: 25px;
-                        }
-                        + a {
-                            @media screen and (max-width: 900px) {
-                                padding-left: 15px;
-                                padding-right: 0px;
-                                margin-top: 0px;
-                                margin-bottom: 0px;
-                            }
-                            @media screen and (max-width: $small) {
-                                padding-left: 0px;
-                            }
-                        }
+                        margin-bottom: 0px;
                     }
                 }
             }

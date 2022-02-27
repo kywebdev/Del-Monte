@@ -1,0 +1,33 @@
+.section__header {
+	position: relative;
+	transition: padding .2s ease-in-out;
+	width: 100%;
+	z-index: 10;
+	height: auto;
+}
+
+.section__header-container {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	transition: padding .2s ease-in-out;
+	position: relative;
+	max-width: $x-large;
+	padding-top: 120px;
+	
+	@media screen and (max-width: 1500px) {
+		padding-top: 80px;
+	}
+	@media screen and (max-width: $medium) {
+		padding-top: 70px;
+	}
+	@media screen and (max-width: $small) {
+		padding-top: 40px;
+	}
+}
+
+.page-hero ~ .main-content-wrapper .section__header-container {
+	padding-top: 0;
+}

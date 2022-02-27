@@ -1,174 +1,26 @@
 .site-wrapper {
-    &.recipes-landing, &.products-landing {
+    &.recipes-landing, &.products-landing, &.recipe-detail, &.product-detail, &.recipes-dataset {
         .gallery-cards {
             .card {
-                @media screen and (max-width: 900px) {
+                .card__text__heading > * {
+                    @include heading-22();
+                    text-align: left;
+                }
+                @media screen and (max-width: $large) {
                     &:not(.featured-card) {
                         display: block;
                         border: none !important;
 
-                        &:hover {
-                            box-shadow: none;
-                        }
                         .card__img {
                             display: inline-block;
                             width: 47%;
                             margin-right: 3%;
-                            border-bottom: none;
-
-                            &:hover {
-                                box-shadow: 0px 0px 15px rgba(180, 180, 180, 0.4);
-                            }
                         }
                         .card__text {
                             display: inline-block;
                             width: 49%;
                             padding: 0px;
                             vertical-align: top;
-
-                            ul {
-                                text-align: left;
-                            }
-                        }
-                        .card__text__heading {
-                            text-align: left;
-                        }
-                        .card__rating {
-                            position: relative;
-                            left: auto;
-                            bottom: auto;
-                            transform: none;
-                        }
-                    }
-                    &.featured-product {
-                        @media screen and (max-width: 900px) {
-                            .card__img {
-                                border-right: none;
-                            }
-                        }
-                        &:hover {
-                            .card__img {
-                                box-shadow: none;
-
-                                img {
-                                    transform: none;
-                                }
-                            }
-                        }
-                        .card__text__heading {
-                            color: $gray;
-                        }
-                    }
-                    &.watermelon-rind-theme {
-                        .card__img {
-                            border-right: 3px solid #74aa50;
-                        }
-                        .card__text__heading {
-                            color: #74aa50;
-                        }
-                    }
-                    &.celery-theme {
-                        .card__img {
-                            border-right: 3px solid #a4d65e;
-                        }
-                        .card__text__heading {
-                            color: #a4d65e;
-                        }
-                    }
-                    &.artichoke-theme {
-                        .card__img {
-                            border-right: 3px solid #d2d755;
-                        }
-                        .card__text__heading {
-                            color: #d2d755;
-                        }
-                    }
-                    &.banana-theme {
-                        .card__img {
-                            border-right: 3px solid #ede049;
-                        }
-                        .card__text__heading {
-                            color: #ede049;
-                        }
-                    }
-                    &.pineapple-theme {
-                        .card__img {
-                            border-right: 3px solid #ed8b00;
-                        }
-                        .card__text__heading {
-                            color: #ed8b00;
-                        }
-                    }
-                    &.strawberry-theme {
-                        .card__img {
-                            border-right: 3px solid #ef3340;
-                        }
-                        .card__text__heading {
-                            color: #ef3340;
-                        }
-                    }
-                    &.red-grape-theme {
-                        .card__img {
-                            border-right: 3px solid #a15a95;
-                        }
-                        .card__text__heading {
-                            color: #a15a95;
-                        }
-                    }
-                    &.cantaloupe-theme {
-                        .card__img {
-                            border-right: 3px solid #fdbe87;
-                        }
-                        .card__text__heading {
-                            color: #fdbe87;
-                        }
-                    }
-                    &.watermelon-theme {
-                        .card__img {
-                            border-right: 3px solid #ff8b9a;
-                        }
-                        .card__text__heading {
-                            color: #ff8b9a;
-                        }
-                    }
-                    &.nectarine-theme {
-                        .card__img {
-                            border-right: 3px solid #ff5c39;
-                        }
-                        .card__text__heading {
-                            color: #ff5c39;
-                        }
-                    }
-                    &.peach-theme {
-                        .card__img {
-                            border-right: 3px solid #d14124;
-                        }
-                        .card__text__heading {
-                            color: #d14124;
-                        }
-                    }
-                    &.plum-theme {
-                        .card__img {
-                            border-right: 3px solid #612c51;
-                        }
-                        .card__text__heading {
-                            color: #612c51;
-                        }
-                    }
-                    &.blueberry-theme {
-                        .card__img {
-                            border-right: 3px solid #7bafd4;
-                        }
-                        .card__text__heading {
-                            color: #7bafd4;
-                        }
-                    }
-                    &.purple-grape-theme {
-                        .card__img {
-                            border-right: 3px solid #535486;
-                        }
-                        .card__text__heading {
-                            color: #535486;
                         }
                     }
                 }
@@ -182,100 +34,7 @@
                             border-right: none;
                         }
                         .card__text {
-                            padding-top: 20px;
                             width: 100%;
-                            text-align: center;
-
-                            ul {
-                                text-align: center;
-                            }
-                        }
-                        .card__text__heading {
-                            text-align: center;
-                        }
-                    }
-                    &.watermelon-rind-theme {
-                        .card__img {
-                            border-bottom: 3px solid #74aa50;
-                            border-right: none;
-                        }
-                    }
-                    &.celery-theme {
-                        .card__img {
-                            border-bottom: 3px solid #a4d65e;
-                            border-right: none;
-                        }
-                    }
-                    &.artichoke-theme {
-                        .card__img {
-                            border-bottom: 3px solid #d2d755;
-                            border-right: none;
-                        }
-                    }
-                    &.banana-theme {
-                        .card__img {
-                            border-bottom: 3px solid #ede049;
-                            border-right: none;
-                        }
-                    }
-                    &.pineapple-theme {
-                        .card__img {
-                            border-bottom: 3px solid #ed8b00;
-                            border-right: none;
-                        }
-                    }
-                    &.strawberry-theme {
-                        .card__img {
-                            border-bottom: 3px solid #ef3340;
-                            border-right: none;
-                        }
-                    }
-                    &.red-grape-theme {
-                        .card__img {
-                            border-bottom: 3px solid #a15a95;
-                            border-right: none;
-                        }
-                    }
-                    &.cantaloupe-theme {
-                        .card__img {
-                            border-bottom: 3px solid #fdbe87;
-                            border-right: none;
-                        }
-                    }
-                    &.watermelon-theme {
-                        .card__img {
-                            border-bottom: 3px solid #ff8b9a;
-                            border-right: none;
-                        }
-                    }
-                    &.nectarine-theme {
-                        .card__img {
-                            border-bottom: 3px solid #ff5c39;
-                            border-right: none;
-                        }
-                    }
-                    &.peach-theme {
-                        .card__img {
-                            border-bottom: 3px solid #d14124;
-                            border-right: none;
-                        }
-                    }
-                    &.plum-theme {
-                        .card__img {
-                            border-bottom: 3px solid #612c51;
-                            border-right: none;
-                        }
-                    }
-                    &.blueberry-theme {
-                        .card__img {
-                            border-bottom: 3px solid #7bafd4;
-                            border-right: none;
-                        }
-                    }
-                    &.purple-grape-theme {
-                        .card__img {
-                            border-bottom: 3px solid #535486;
-                            border-right: none;
                         }
                     }
                 }
@@ -307,68 +66,74 @@
                 }
             }
         }
-    }
-    &.recipes-landing, &.recipes-dataset, &.product-category-landing {
-        &.general {
-            .cards {
-                &:first-of-type {
-                    margin-top: 104px;
+        .load-more {
+            margin-top: 65px;
 
-                    @media screen and (max-width: 1350px) {
-                        margin-top: 136px;
-                    }
-                    @media screen and (max-width: $medium) {
-                        margin-top: 20px;
-                    }
-                }
+            @media screen and (max-width: $small) {
+                margin-top: 30px;
+                margin-bottom: -20px;
+            }
+            p {
+                color: $green;
+                font-size: 18px;
+                line-height: 25px;
+                font-style: italic;
             }
         }
-        .breadcrumbs {
-            z-index: 11;
+    }
+    &.recipes-landing, &.recipes-dataset {
+        .page__title-container {
+            width: 48%;
 
-            .form {
-                position: relative;
-                margin-top: -27px;
-                margin-bottom: -1px;
-                width: 300px;
-                max-width: none;
-                vertical-align: top;
+            @media screen and (max-width: $medium) {
+                width: 100%;
+            }
+        }
+        .main-content-wrapper {
+            position: relative;
 
-                @media screen and (max-width: 1350px) {
-                    width: 100%;
-                    margin-top: 5px;
+            &:before {
+                content: '';
+                width: 100%;
+                height: 864px;
+                background-image: url('../img/green-leaf-bg.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: bottom;
+                position: absolute;
+                top: calc(100vh - 400px);
+                left: 0px;
+
+                @media screen and (max-height: 1000px) {
+                    top: 600px;
                 }
                 @media screen and (max-width: $medium) {
-                    margin-top: 0px;
-                }
-                input {
-                    padding: 5px !important;
+                    top: 600px;
                 }
             }
         }
-        h1 {
-            margin-bottom: 10px;
-            margin-top: 15px;
+    }
+    &.recipes-no-results {
+        .main-content-wrapper {
+            &:before {
+                display: none !important;
+            }
         }
-        .recipes-heading {
-            position: relative;
-            margin-bottom: -22px;
-
-            .form {
-                input {
-                    &[type="submit"] {
-                        margin: 5px 0px 0px !important;
-                        padding: 7px 40px 5px !important;
-                        text-transform: uppercase;
-                        font-size: 16px !important;
-                        border-radius: 10px !important;
-                    }
+        .section__header-container {
+            .search-form {
+                @media screen and (max-width: $medium) {
+                    display: none;
                 }
             }
         }
+    }
+    &.recipes-landing, &.recipes-dataset, &.product-category-landing {
         .browse-filters {
-            display: flex;
+            width: 210%;
 
+            @media screen and (max-width: $medium) {
+                width: 100%;
+            }
             &.nav-up {
                 @media screen and (max-width: $medium) {
                     position: fixed;
@@ -418,60 +183,68 @@
             }
         }
         .browse-by {
-            padding: 6px 25px;
-            margin-top: 2px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            margin-right: 10px;
-            width: 178px;
+            margin: 50px 0px 35px 40px;
 
-            @media screen and (max-width: 1400px) {
-                padding: 6px 10px;
+            @media screen and (max-width: $medium) {
+                margin: 50px 0px 25px;
             }
-            @media screen and (max-width: $small) {
-                width: 130px;
-                font-size: 13px;
-            }
-            .down-arrow {
-                margin-left: 5px;
-                transform: rotate(-90deg);
-                transition: .3s ease-in-out;
-                display: inline-block;
+        }
+        .dataset-tags {
+            display: flex;
+            margin-left: 30px;
 
-                @media screen and (max-width: $small) {
-                    margin-left: 0px;
-                }
-            }
-            &.panel-active {
-                .down-arrow {
-                    transform: rotate(0deg);
-                }
+            @media screen and (max-width: $medium) {
+                margin-left: 0px;
             }
         }
         .fa-tag {
-            font-size: 20px;
-            position: relative;
-            top: 8px;
+            font-size: 25px;
             margin-left: 10px;
+            margin-right: 20px;
+            top: 2px;
+
+            @media screen and (max-width: $medium) {
+                margin-left: 0px;
+            }
         }
         .filter-flyout {
-            padding: 10px 20px 30px;
+            padding: 25px 60px 60px;
             position: absolute;
-            top: 145px;
+            top: 300px;
             left: 0px;
             z-index: 2;
-            background-color: $white;
-            box-shadow: 0px 10px 15px rgb(180, 180, 180);
-            width: calc(100% + 40px);
-            margin-left: -20px;
+            background-color: $green;
+            box-shadow: 6px 6px 13px rgba($black, .24);
+            width: calc(100% - 40px);
+            margin-left: 40px;
             opacity: 0;
             visibility: hidden;
             transition: .4s ease-in-out;
 
+            @media screen and (max-width: $medium) {
+                width: 100%;
+                margin-left: 0px;
+                padding: 5px 40px 40px;
+                top: 250px;
+            }
+            @media screen and (max-width: $small) {
+                padding: 15px 30px 40px;
+                top: 210px;
+            }
             &.is-open {
                 opacity: 1;
                 visibility: visible;
-                top: 95px;
+                top: 310px;
+
+                @media screen and (max-width: 1500px) {
+                    top: 270px;
+                }
+                @media screen and (max-width: $medium) {
+                    top: 250px;
+                }
+                @media screen and (max-width: $small) {
+                    top: 200px;
+                }
             }
             .close-flyout {
                 position: absolute;
@@ -493,21 +266,51 @@
                 width: 100%;
                 margin-top: 0px;
                 padding: 0px;
+
+                input[type="submit"] {
+                    display: inline-block;
+                    margin-top: 35px;
+                    margin-bottom: 0px !important;
+                    border: 2px solid $white;
+                    border-radius: 100px;
+                    padding: 25px 40px 23px;
+                    font-size: 22px;
+                    width: auto;
+                    margin-bottom: 10px;
+                    transition: .2s ease-in-out;
+                    background-color: $white;
+                    color: $green;
+                    font-family: $intro;
+
+                    @media screen and (max-width: $small) {
+                        padding: 15px 30px 13px;
+                        font-size: 18px;
+                        margin-top: 25px;
+                    }
+                    &:hover {
+                        background-color: transparent;
+                        color: $white;
+                    }
+                }
             }
             &__section {
-                border-bottom: 1px solid #bfbfbf;
-                padding-bottom: 10px;
+                border-bottom: 2px solid $white;
+                padding: 35px 0px 15px;
 
-                &:last-of-type {
-                    border-bottom: none;
+                @media screen and (max-width: $small) {
+                    padding: 25px 0px 15px;
                 }
                 &__title {
                     display: block;
-                    margin: 20px 0px;
-                    color: $gray;
-                    font-size: 16px;
-                    font-weight: bold;
-                    letter-spacing: .5px;
+                    margin: 0px 0px 25px;
+                    color: $white;
+                    font-family: $intro;
+                    font-size: 22px;
+
+                    @media screen and (max-width: $small) {
+                        font-size: 18px;
+                        margin-bottom: 20px;
+                    }
                 }
                 &__filter {
                     display: inline-block;
@@ -518,29 +321,45 @@
 
                         &:checked {
                             + label {
-                                border: 1px solid $green;
-                                background-color: $green;
+                                border: 2px solid $light-green;
+                                background-color: $light-green;
                                 color: $white;
                                 background-image: none;
+                                font-weight: bold;
 
                                 &:hover {
-                                    background-color: $green;
+                                    background-color: $light-green;
+                                    color: $white;
                                 }
                             }
                         }
                         + label {
-                            border: 1px solid $gray;
-                            border-radius: 8px;
-                            padding: 4px 10px 3px;
-                            font-size: 16px;
+                            border: 2px solid $white;
+                            border-radius: 100px;
+                            padding: 15px 25px 13px;
+                            font-size: 18px;
                             font-weight: normal;
                             width: auto;
                             margin-bottom: 10px;
                             transition: .2s ease-in-out;
                             background-image: none;
+                            position: relative;
+                            overflow: visible;
+                            height: auto;
+                            clip: unset;
+                            margin: 0px 0px 15px;
+                            color: $white;
+                            font-family: $avenir;
+                            cursor: pointer;
 
+                            @media screen and (max-width: $small) {
+                                font-size: 16px;
+                                padding: 10px 20px 8px;
+                                margin: 0px 0px 10px;
+                            }
                             &:hover {
-                                background-color: rgba($green, .3);
+                                background-color: $white;
+                                color: $green;
                             }
                         }
                     }
@@ -549,17 +368,17 @@
         }
         .selected-filters {
             display: inline-block;
-            white-space: nowrap;
-            width: calc(100% - 228px);
-            margin-top: -19px;
+            width: 100%;
 
             ul {
                 margin: 0px;
+                padding: 0px;
 
                 li {
                     list-style-type: none;
                     display: inline-block;
                     padding-right: 10px;
+                    margin-bottom: 10px;
 
                     &.-more {
                         > button {
@@ -569,75 +388,44 @@
                 }
             }
             &__filter {
-                background-color: #eeeeee;
-                color: $gray;
+                background-color: transparent;
+                color: $green;
                 padding: 5px 12px;
                 border-radius: 20px;
-                font-size: 14px;
+                border: 2px solid $green;
+                font-size: 16px;
                 font-weight: normal;
                 cursor: pointer;
+                display: inline-block;
 
                 &:last-of-type {
                     margin-right: 0px;
                 }
                 &:hover, &:focus, &:active {
                     background-color: $red;
+                    border-color: $red;
                     color: $white;
                 }
-                &.clear {
-                    background-color: transparent;
-                    font-weight: bold !important;
-                    text-transform: uppercase;
-                    font-size: 12px;
-                    letter-spacing: .5px;
-                    cursor: pointer;
-
-                    &:hover, &:focus, &:active {
-                        background-color: $red;
-                    }
-                }
                 span {
-                    margin-left: 3px;
+                    margin-left: 5px;
+                    position: relative;
+                    top: 1px;
                 }
             }
-        }
-    }
-    &.recipes-landing {
-        &.general {
-            .cards {
-                &:first-of-type {
-                    margin-top: 104px;
-
-                    @media screen and (max-width: 1350px) {
-                        margin-top: 136px;
-                    }
-                    @media screen and (max-width: $medium) {
-                        margin-top: 20px;
-                    }
-                }
-            }
-        }
-        .browse-filters {
-            display: inline;
         }
     }
     .no-results {
-        margin-top: 130px;
+        margin-top: 70px;
 
-        @media screen and (max-width: 1350px) {
-            margin-top: 160px;
-        }
         @media screen and (max-width: $medium) {
             margin-top: 40px;
         }
         h2 {
-            font-family: $arial;
             font-size: 24px;
             font-weight: bold;
-            letter-spacing: 1px;
             text-align: center;
             line-height: 34px;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
 
             @media screen and (max-width: $medium) {
                 font-size: 20px;
@@ -647,610 +435,252 @@
             }
         }
         .form {
-            max-width: 800px;
-            margin: 0px auto 20px;
+            margin: 0px auto 70px;
 
             @media screen and (max-width: $medium) {
-                margin: 0px auto 10px;
-            }
-            input {
-                font-size: 18px !important;
-                padding: 13px !important;
-
-                @media screen and (max-width: $medium) {
-                    font-size: 16px !important;
-                }
-            }
-        }
-    }
-    .meal-types {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        margin-bottom: 10px;
-        justify-content: center;
-
-        @media screen and (max-width: $medium) {
-            margin-bottom: 20px;
-        }
-        &__type {
-            display: block;
-            width: calc(100% / 5);
-            text-align: center;
-            align-self: center;
-            padding: 0px 15px;
-            outline: none;
-
-            @media screen and (max-width: 1200px) {
-                width: calc(100% / 3);
-            }
-            @media screen and (max-width: $small) {
-                width: calc(100% / 2);
-            }
-            &:hover {
-                img {
-                    top: -10px;
-                }
-                span {
-                    color: $green;
-                }
-            }
-            img {
-                width: 100%;
-                max-width: 150px;
-                display: block;
-                margin: 0px auto 10px;
-                position: relative;
-                top: 0px;
-                transition: .3s ease-in-out;
-            }
-            span {
-                font-family: $atomico;
-                color: $purple;
-                font-size: 28px;
-                letter-spacing: 1.7px;
-                transition: .3s ease-in-out;
-
-                @media screen and (max-width: 1500px) {
-                    font-size: 1.6vw;
-                }
-                @media screen and (max-width: 1200px) {
-                    font-size: 2.5vw;
-                }
-                @media screen and (max-width: 750px) {
-                    font-size: 22px;
-                }
+                margin: 0px auto 20px;
             }
         }
     }
     &.recipe-detail {
-        .breadcrumbs {
-            .form {
-                position: relative;
-                width: 300px;
-                max-width: none;
-                vertical-align: top;
-                margin-top: -27px;
-
-                @media screen and (max-width: 1350px) {
-                    max-width: 300px;
-                    width: 50%;
-                }
-                @media screen and (max-width: 1000px) {
-                    max-width: none;
-                    width: 100%;
-                    margin-top: 0px;
-                }
-                input {
-                    padding: 5px !important;
-                    border-radius: 10px !important;
-                }
-            }
-            + .container-fluid {
-                margin-top: 33px;
+        .container-fluid {
+            .row {
+                margin-left: -30px;
+                margin-right: -30px;
             }
         }
-        .dietary-icons {
-            margin-top: -15px;
-            justify-content: center;
-
-            @media screen and (max-width: $small) {
-                margin-top: 0px;
-                margin-bottom: 30px;
-            }
-            &__icon {
-                padding-top: 15px;
-                padding-bottom: 15px;
-
-                @media screen and (max-width: $small) {
-                    flex: 0 0 50%;
-                    max-width: 50%;
-                }
-                img {
-                    max-width: 110px;
-                    margin: 0px auto;
-                    display: block;
-                }
-            }
+        .col-lg-8, .col-lg-4 {
+            padding: 0px 30px;
         }
-        .recipe-notes {
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 1;
-
-            &__note {
-                display: flex;
-                justify-content: space-between;
-
-                p {
-                    &:first-of-type {
-                        padding-right: 15px;
-                    }
-                }
-            }
-            p {
-                margin-bottom: 0px;
-                font-weight: bold;
-                font-size: 16px;
-                line-height: 22px;
-            }
+        .search-form {
+            position: relative !important;
+            top: 0px;
+            width: 100%;
+            margin: 50px 0px;
         }
-        .tag-section {
-            margin-bottom: 20px;
-        }
-        .recipe-rating {
-            margin-bottom: 40px;
-            position: relative;
-
-            .cf {
-                &:after {
-                    content: '';
-                    display: table;
-                    clear: both;
-                }
-            }
-            ul {
-                margin: 0px;
-                text-align: center;
-
-                li {
-                    list-style-type: none;
-                    display: inline-block;
-                    padding: 0px 1px;
-
-                    img {
-                        width: 31px;
-                        height: 31px;
-                    }
-                }
-            }
-        }
-        .signin-to-rate {
-            .rating-results {
-                position: relative;
-                top: 0px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 100%;
-                transition: .3s ease-in-out;
-
-                &.is-visible {
-                    opacity: 1;
-                    visibility: visible;
-                }
-                p {
-                    text-align: center;
-                    margin-top: 10px;
-                    margin-bottom: 0px;
-                }
-            }
-            p {
-                text-align: center;
-                margin-top: 20px;
-            }
-        }
-        .signed-in {
-            .rating-initial {
-                &.is-hidden {
-                    opacity: 0;
-                    visibility: hidden;
-                    position: absolute;
-                }
-                p {
-                    text-align: center;
-                    margin-top: 10px;
-                }
-            }
-            .rating-form {
-                opacity: 0;
-                visibility: hidden;
-                position: absolute;
-                top: 0px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 100%;
-                transition: .3s ease-in-out;
-
-                &.is-visible {
-                    opacity: 1;
-                    visibility: visible;
-                    position: relative;
-                }
-            }
-            .rating-results {
-                opacity: 0;
-                visibility: hidden;
-                position: absolute;
-                top: 0px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 100%;
-                transition: .3s ease-in-out;
-
-                &.is-visible {
-                    opacity: 1;
-                    visibility: visible;
-                    position: relative;
-                }
-                p {
-                    text-align: center;
-                    margin-top: 10px;
-                    margin-bottom: 0px;
-                }
-            }
-        }
-        .rate {
-            float: left;
-            width: 185px;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: .3s ease-in-out;
-
-            &.is-hidden {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-        .rate:not(:checked) > input {
-            display: none;
-
-            &[type="submit"] {
-                display: block;
-                padding: 7px 25px !important;
-            }
-        }
-        .rate:not(:checked) > label {
-            float:right;
-            width: 37px;
-            overflow:hidden;
-            white-space:nowrap;
-            cursor:pointer;
-            font-size:0px;
-            color:#ccc;
-            height: 31px;
-            line-height: initial !important;
-            padding: 0px 3px;
-            background-image: none;
-        }
-        .rate:not(:checked) > label:before {
-            content: '';
-            background-image: url('../img/purple-star-0-5.png');
-            background-repeat: no-repeat;
-            background-size: contain;
-            width: 37px;
-            height: 31px;
-            padding: 0px 3px;
-            display: block;
-        }
-        .rate > input:checked ~ label {
-            background-image: url('../img/purple-star-5-5.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 29px;
-        }
-        .rate:not(:checked) > label:hover,
-        .rate:not(:checked) > label:hover ~ label {
-            background-image: url('../img/purple-star-5-5.png');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 29px;
-        }
-
         .recipes-sidebar-container {
-            @media screen and (max-width: 900px) {
-                display: flex;
-                margin: 30px -15px 0px;
-            }
-            @media screen and (max-width: $small) {
-                display: block;
-                margin: 0px;
+            hr {
+                margin: 50px 0px;
+                max-width: none;
             }
         }
         .recipes-sidebar {
-            @media screen and (max-width: 900px) {
-                order: 2;
-                width: 50%;
-                padding: 0px 15px;
-            }
-            @media screen and (max-width: $small) {
-                width: 100%;
-                padding: 0px;
+            @media screen and (max-width: $large) {
+                margin-top: -20px;
             }
             .fa-tag {
-                font-size: 30px;
+                font-size: 22px;
             }
             .tags {
                 width: calc(100% - 50px);
                 margin-left: 10px;
+
+                ul {
+                    padding: 0px;
+                }
             }
         }
         .recipe-actions {
-            margin-top: 15px;
-            width: 100%;
+            margin-top: 20px;
+            width: 150px;
             text-align: right;
+            position: relative;
+            z-index: 2;
+            margin-left: auto;
 
-            &__favorite {
-                display: inline-block;
-                margin-right: 15px;
-                position: relative;
-                top: 5px;
-
-                a {
-                    font-size: 25px;
-                    color: $gray;
-
-                    &.added {
-                        color: $red;
-                    }
-                    &:hover {
-                        color: $red;
-                    }
-                }
-            }
             &__share {
-                margin-right: 15px;
+                margin-right: 30px;
                 cursor: pointer;
-                width: 25px;
+                width: 31px;
                 position: relative;
                 display: inline-block;
 
+                @media screen and (max-width: $small) {
+                    width: 25px;
+                    margin-right: 25px;
+                }
                 a {
                     display: block;
-                    padding: 5px 0px;
                 }
                 img {
-                    width: 25px;
+                    width: 31px;
+
+                    @media screen and (max-width: $small) {
+                        width: 25px;
+                    }
                 }
             }
             &__print {
-                margin-right: 15px;
+                margin-right: 30px;
                 display: inline-block;
-                width: 25px;
+                width: 37px;
                 position: relative;
                 top: -1px;
 
+                @media screen and (max-width: $medium) {
+                    margin-right: 0px;
+                }
+                @media screen and (max-width: $small) {
+                    width: 30px;
+                }
                 a {
                     display: block;
-                    height: 30px;
                 }
-            }
-            &__download {
-                display: inline-block;
-                width: 25px;
-                position: relative;
-                top: -2px;
+                img {
+                    width: 37px;
 
-                a {
-                    display: block;
-                    height: 32px;
+                    @media screen and (max-width: $small) {
+                        width: 30px;
+                    }
                 }
-            }
-        }
-        h1 {
-            margin-top: 10px;
-
-            @media screen and (max-width: $medium) {
-                text-align: left;
             }
         }
         .recipe-body {
-            h2 {
-                font-family: $arial;
-                font-size: 18px;
-                font-weight: bold;
-                letter-spacing: 0px;
+            .recipe-notes {
+                margin: 50px 0px -40px;
+                
+                @media screen and (max-width: $small) {
+                    margin: 50px 0px -30px;
+                }
+                &__note {
+                    display: flex;
 
-                @media screen and (max-width: $medium) {
-                    text-align: left;
+                    h2 {
+                        margin-right: 20px;
+                    }
+                    p {
+                        margin-bottom: 0px;
+
+                        @media screen and (max-width: $small) {
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+            h2 {
+                font-family: $intro;
+                font-size: 28px;
+                line-height: 26px;
+                color: $green;
+                margin-bottom: 40px;
+
+                @media screen and (max-width: $small) {
+                    font-size: 22px;
+                    line-height: 20px;
+                    margin-bottom: 30px;
+                }
+            }
+            
+            hr {
+                max-width: 420px;
+                margin: 60px 0px;
+
+                @media screen and (max-width: $large) {
+                    max-width: none;
+                }
+                @media screen and (max-width: $small) {
+                    margin: 50px 0px;
                 }
             }
             .ingredient-list {
                 margin: 0px;
+                padding: 0px;
 
                 li {
                     list-style-type: none;
-                    color: $gray;
-                    font-size: 14px;
-                    margin-bottom: 7px;
-
+                    @include text-22(false,1.75);   
                     .ingredient-divider {
                         font-weight: bold;
                         display: block;
                         margin-top: 20px;
-                        margin-bottom: -10px;
                     }
                     .ingredient-amt {
-                        width: 65px;
                         display: inline-block;
+                        color: $green;
+                        font-weight: bold;
                     }
                     .ingredient {
                         display: inline-block;
-                        width: calc(100% - 69px);
                         vertical-align: top;
                     }
                 }
             }
+
+            ol {
+                li {
+                    @include text-22(false,1.375);              
+                    margin-bottom: 1em;
+                }
+            }
+
+        }
+        .leaf-img {
+            position: relative;
+            
+            img {
+                position: absolute;
+                bottom: 0px;
+                right: 0px;
+            }
         }
         .recipe-video-section {
-            margin-top: 40px;
+            margin: 50px 0px 0px;
 
-            @media screen and (max-width: 900px) {
-                margin-top: 10px;
+            @media screen and (max-width: $large) {
+                margin: 40px 0px 20px;
             }
-            @media screen and (max-width: $small) {
-                margin-top: 40px;
+            .row {
+                margin-left: -15px;
+                margin-right: -15px;
             }
             &__video {
                 @include aspect-ratio(16, 9);
                 width: 100%;
                 height: 100%;
 
-                @media screen and (max-width: $small) {
-                    margin-bottom: 40px;
-                    height: auto;
-                }
                 iframe {
                     width: 100%;
                     height: 100%;
                 }
             }
         }
-        .question-card {
-            border: 1px solid #e6e6e6;
-            padding: 50px 40px;
-            height: 100%;
-
-            @media screen and (max-width: 1400px) {
-                padding: 30px;
-            }
-            &__question {
-                font-family: $atomico;
-                font-size: 20px;
-                color: $gray;
-                line-height: 28px;
-                letter-spacing: 1.5px;
-                margin-bottom: 40px;
-                display: block;
-
-                @media screen and (max-width: 1700px) {
-                    font-size: 1.17vw;
-                    line-height: 1.65vw;
-                }
-                @media screen and (max-width: 1400px) {
-                    margin-bottom: 20px;
-                }
-                @media screen and (max-width: 1200px) {
-                    font-size: 1.47vw;
-                    line-height: 1.95vw;
-                }
-                @media screen and (max-width: $medium) {
-                    font-size: 20px;
-                    line-height: 28px;
-                    margin-bottom: 30px;
-                }
-            }
-            input[type="radio"] {
-                + label {
-                    font-size: 18px;
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    letter-spacing: .5px;
-                    margin-bottom: 23px;
-                    padding-top: 4px;
-
-                    @media screen and (max-width: 1700px) {
-                        font-size: 1.05vw;
-                    }
-                    @media screen and (max-width: 1400px) {
-                        margin-bottom: 20px;
-                        top: -1px;
-                    }
-                    @media screen and (max-width: 1200px) {
-                        font-size: 1.25vw;
-                    }
-                    @media screen and (max-width: $medium) {
-                        font-size: 15px;
-                    }
-                }
-            }
-            &__answers {
-                &__answer {
-                    &:last-of-type {
-                        input[type="radio"] {
-                            + label {
-                                margin-bottom: 0px !important;
-                            }
-                        }
-                    }
-                }
-            }
-        }
         .recommended-section {
-            margin-top: 70px;
+            margin-top: 130px;
+            padding: 90px 0px 105px;
+            background-image: url('../img/suggested-products-recipes-bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
 
-            @media screen and (max-width: 900px) {
-                margin-top: 50px;
+            @media screen and (max-width: $large) {
+                margin-top: 90px;
+            }
+            @media screen and (max-width: $medium) {
+                background-size: 1500px;
+                background-position: top right;
+                padding: 90px 0px 0px;
             }
             @media screen and (max-width: $small) {
-                margin-top: 30px;
+                margin-top: 60px;
+                padding: 60px 0px 0px;
             }
             h2 {
-                font-size: 28px;
-                color: $purple;
+                margin-bottom: 25px;
             }
             .cards {
-                margin-top: 0px !important;
-
-                a {
-                    margin-bottom: 30px;
-
-                    @media screen and (max-width: $medium) {
-                        margin-bottom: 0px;
-                    }
-                }
+                margin: 0px !important;
             }
         }
-        .comment-form {
-            margin-top: 20px;
-            border-top: 3px solid $purple;
-            padding-top: 20px;
+        .global-cards {
+            margin-top: 105px;
 
             @media screen and (max-width: $medium) {
-                margin-top: 40px;
+                margin-top: 60px;
             }
-            textarea {
-                margin-bottom: 17px !important;
-            }
-            .text-center {
-                border-top: 3px solid $purple;
-            }
-        }
-        .comments {
-            margin-top: 30px;
+            hr {
+                display: none;
 
-            &__comment {
-                border-top: 1px solid #cfcfcf;
-                padding-top: 40px;
-                padding-bottom: 20px;
-
-                @media screen and (max-width: $small) {
-                    padding-top: 30px;
-                    padding-bottom: 10px;
-                }
-                .username {
-                    font-size: 18px;
-                    font-weight: bold;
-                    color: $gray;
-                    margin-bottom: 20px;
+                @media screen and (max-width: $medium) {
                     display: block;
-                }
-            }
-            .align-center {
-                margin-bottom: 50px;
-
-                @media screen and (max-width: $small) {
-                    margin-bottom: -10px;
                 }
             }
         }

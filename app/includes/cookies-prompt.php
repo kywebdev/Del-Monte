@@ -2,11 +2,11 @@
     <button class="remodal-close"></button>
     <div class="section-container">
         <div class="cookies-prompt__text">
-            <p><strong>Cookie Disclaimer Body Copy:</strong> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+            <p><span>Cookie Disclaimer:</span> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <div class="cookies-prompt__buttons">
-            <a href="" class="btn btn--green">I, Accept.</a>
-            <a href="" class="btn btn--red">I, Decline.</a>
+            <a href="" class="btn --green --no-arrow">I, Accept</a>
+            <a href="" class="btn --red --no-arrow">I, Decline</a>
         </div>
     </div>
 </div>

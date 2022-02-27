@@ -1,9 +1,9 @@
 <section class="performance-facts">
-    <header class="performance-facts__header">
+    <div class="performance-facts__header">
         <h3 class="performance-facts__title">Nutrition Facts</h3>
         <p>Serving Size 1/2 cup (about 82g)</p>
         <p>Serving Per Container 8</p>
-    </header>
+    </div>
     <table class="performance-facts__table">
         <thead>
             <tr>

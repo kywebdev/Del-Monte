@@ -7,366 +7,180 @@
         <?php include('includes/styles.php'); ?>
     </head>
     <body id="top">
+      <form id="aspnetForm">
         <?php include('includes/loading-screen.php'); ?>
-        <div class="site-wrapper general product-detail banana-theme">
+        <div class="site-wrapper general product-detail">
             <?php include('includes/mobile-nav.php'); ?>
             <div class="site">
-                <?php include('includes/sidebar.php'); ?>
-                <main class="bg-texture-watermelon">
+                <?php include('includes/header.php'); ?>
+                <main>
                     <section class="main-content-wrapper">
-                        <div class="section-container">
-                            <nav class="breadcrumbs" aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">PagePath</a></li>
-                                    <li class="breadcrumb-item"><a href="#">BreadCrumb</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">General Page</li>
+                        <nav class="breadcrumb__nav" aria-label="breadcrumb">
+                            <div class="section-container">
+                                <ol class="breadcrumb__list">
+                                    <li class="breadcrumb__list-item"><a href="index.php">Home</a></li>
+                                    <li class="breadcrumb__list-item"><a href="products-landing.php">Products</a></li>
+                                    <li class="breadcrumb__list-item --active" aria-current="page">Pineapples</li>
                                 </ol>
-                                <form class='form'>
-                                    <label for="products-search">Product Search</label>
-                                    <input type="search" id="products-search" placeholder="Product Search" />
-                                </form>
-                            </nav>
+                            </div>
+                        </nav>
+                        <div class="section-container">
+                            <div class="section__header">
+                                <div class="section__header-container">
+                                    <div class="page__title-container">
+                                        <h1 class="page__title --yellow-100"><span>pineappleS</span></h1>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="container-fluid">
                                 <div class="row">
-                                    <div class="col-lg-8 col-md-7">
-                                        <!-- The color of the slider border, active slide indicator, page title and variety highlight is customizable by a theme class, which goes into the same div as the site-wrapper. See the app/scss/layouts/_product-themes.scss partial for a list of available theme classes. -->
+                                    <div class="col-lg-8">
                                         <div class="product-slider">
                                             <div class="slide">
-                                                <img src="img/bananas.jpg" alt="" />
+                                                <img src="img/delmonte-isolatedimage-pinapple1-998x6044a83ac22-388c-424b-b79c-c598c3fc99b4.jpg" alt=""/>
                                             </div>
                                             <div class="slide">
-                                                <img src="img/bananas.jpg" alt="" />
+                                                <img src="img/delmonte-isolatedimage-pinaapple_honeyglow-988x604d61b0e67-a6c7-474f-80a6-ac0c7b2cc582.jpg" alt=""/>
                                             </div>
                                             <div class="slide">
-                                                <img src="img/bananas.jpg" alt="" />
+                                                <img src="img/delmonteproductimage-macro-pineapple_1-988x604.jpg" alt=""/>
                                             </div>
                                             <div class="slide">
-                                                <img src="img/bananas.jpg" alt="" />
+                                                <img src="img/delmonteproductimage-macro-pineapple_2-988x604.jpg" alt=""/>
                                             </div>
                                             <div class="slide">
-                                                <img src="img/bananas.jpg" alt="" />
+                                                <img src="img/delmonteproductimage-macro-pineapple_3-988x604.jpg" alt=""/>
+                                            </div>
+                                            <div class="slide">
+                                                <img src="img/delmonteproductimage-macro-pineapple_3-988x604.jpg" alt=""/>
                                             </div>
                                         </div>
-                                        <div class="product-slider-footer">
-                                            <h1>Bananas</h1>
-                                            <div class="product-actions">
-                                                <div class="product-actions__share" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" title="Share">
-                                                    <a href="" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="<ul>
-                                                        <li>
-                                                            <a href='' target='_blank'>
-                                                                <span class='fab fa-linkedin-in'></span>
-                                                                <span class='social-media-name'>LinkedIn</span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href='' target='_blank'>
-                                                                <span class='fab fa-facebook-f'></span>
-                                                                <span class='social-media-name'>Facebook</span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href='' target='_blank'>
-                                                                <span class='fab fa-twitter'></span>
-                                                                <span class='social-media-name'>Twitter</span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href='' target='_blank'>
-                                                                <span class='fab fa-pinterest-p'></span>
-                                                                <span class='social-media-name'>Pinterest</span>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href='' target='_blank'>
-                                                                <span class='fas fa-envelope'></span>
-                                                                <span class='social-media-name'>Email</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>">
-                                                        <img src="img/share-gray.svg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div class="product-actions__print">
-                                                    <a href="" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" title="Print">
-                                                        <img src="img/print-gray.svg" alt="" />
-                                                    </a>
-                                                </div>
-                                                <div class="product-actions__download">
-                                                    <a href="" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" title="Download PDF">
-                                                        <img src="img/download.svg" alt="" />
-                                                    </a>
-                                                </div>
+                                        <div class="product-actions">
+                                            <div class="product-actions__share" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" title="Share">
+                                                <a href="" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="<ul>
+                                                    <li>
+                                                        <a href='' target='_blank'>
+                                                            <span class='fab fa-linkedin-in'></span>
+                                                            <span class='social-media-name'>LinkedIn</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='' target='_blank'>
+                                                            <span class='fab fa-facebook-f'></span>
+                                                            <span class='social-media-name'>Facebook</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='' target='_blank'>
+                                                            <span class='fab fa-twitter'></span>
+                                                            <span class='social-media-name'>Twitter</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='' target='_blank'>
+                                                            <span class='fab fa-pinterest-p'></span>
+                                                            <span class='social-media-name'>Pinterest</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='' target='_blank'>
+                                                            <span class='fas fa-envelope'></span>
+                                                            <span class='social-media-name'>Email</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href=''>
+                                                            <span class='fas fa-link'></span>
+                                                            <span class='social-media-name'>Copy Link</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>">
+                                                    <img src="img/share-green.svg" alt="" loading="lazy" />
+                                                </a>
+                                            </div>
+                                            <div class="product-actions__print">
+                                                <a href="" data-toggle="tooltip" data-placement="bottom" data-trigger="hover" title="Print">
+                                                    <img src="img/print-green.svg" alt="" loading="lazy" />
+                                                </a>
                                             </div>
                                         </div>
                                         <div class="varieties">
                                             <div class="varieties__heading">
                                                 <span>Other Varieties</span>
-                                                <a href="" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">View More</a>
                                             </div>
                                             <div class="product-varieties-initial">
                                                 <div class="product-varieties">
-                                                    <div class="product-varieties__variety active">
+                                                    <a href="" class="product-varieties__variety active">
                                                         <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-packaged.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-packaged-hover.jpg" alt="" />
-                                                            </div>
+                                                            <img src="img/product-thumbnail-fpo.jpg" alt="" />
                                                         </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
+                                                        <p>Del Monte Gold® Extra Sweet Pineapple</p>
+                                                    </a>
+                                                    <a href="" class="product-varieties__variety">
                                                         <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-mini.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-mini-hover.jpg" alt="" />
-                                                            </div>
+                                                            <img src="img/product-thumbnail-fpo.jpg" alt="" />
                                                         </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-monzano.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-monzano-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-organic.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-organic-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-red.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-red-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-single.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-single-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-packaged.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-packaged-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-mini.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-mini-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-monzano.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-monzano-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-organic.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-organic-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-red.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-red-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-single.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-single-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-packaged.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-packaged-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-mini.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-mini-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-monzano.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-monzano-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-organic.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-organic-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-red.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-red-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
-                                                    <div class="product-varieties__variety">
-                                                        <div class="product-varieties__variety__image">
-                                                            <div class="product-varieties__variety__image__initial">
-                                                                <img src="img/bananas-single.jpg" alt="" />
-                                                            </div>
-                                                            <div class="product-varieties__variety__image__hover">
-                                                                <img src="img/bananas-single-hover.jpg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                        <p>Product Name</p>
-                                                    </div>
+                                                        <p>Honeyglow® Pineapple</p>
+                                                    </a>
                                                 </div>
                                             </div>
-                                            <div class="product-varieties-toggle collapse" id="collapseOne">
-                                                <div class="product-varieties"></div>
-                                            </div>
                                         </div>
-                                        <p>Bananas come in a variety of sizes and colors but are always sweet and satisfying when eaten! Bananas have been around forever. Did you know that they have grown on this planet for over 1 million years and that experts believe the first plants grew in the jungles of Southeast Asia?</p>
-                                        <p>Nowadays bananas are known as one of the most versatile fruits because they can be enjoyed as a nutritious snack, part of a meal or dessert, in a milkshake, as a topping for cereal, or in a cool banana split.</p>
+                                        <p>When it comes to fresh pineapples, there’s a gold standard. In 1996, Fresh Del Monte introduced The Del Monte Gold® Extra Sweet pineapple, a then-new variety that’s twice as sweet as the traditional pineapple featuring a beautiful, golden flesh. In addition to our Del Monte Gold® Extra Sweet pineapple, Honeyglow® pineapple is hand-harvested at peak sweetness and ripeness. Learn more about Honeyglow® pineapple at <a href="https://honeyglowpineapple.com" target="_blank">https://honeyglowpineapple.com</a>.</p>
+                                        <p>Other ways to enjoy fresh Del Monte® pineapples  include desserts, salads, smoothies or as a tropical garnish for meats and poultry. And let’s not forget how amazing they are on the rim of a frozen umbrella drink.</p>
                                     </div>
-                                    <div class="col-lg-4 col-md-5">
+                                    <div class="col-lg-4 products-sidebar">
+                                        <hr class="d-lg-none" />
+                                        <form class="form search-form">
+                                            <label for="search-form__input">Product Search</label>
+                                            <input id="search-form__input" class="search-form__input" type="search" placeholder="Product Search" aria-label="Product Search">
+                                            <button class="search-form__submit" aria-label="Search">
+                                                <svg class="icon svg-icon-search" aria-hidden="true"><use xlink:href="#svg-icon-search"></use></svg>
+                                            </button>
+                                        </form>
                                         <div class="featured-recipes">
-                                            <h2>Featured Recipes</h2>
-                                            <p>Our chefs are hard at work creating fresh and healthful recipes to suit your lifestyle. Until they are perfected and ready to share, please take a look at a few of our favorite recipes below.</p>
                                             <a href="" class="featured-recipes__recipe banana-theme">
-                                                <img src="img/delmonte-featuredrecipeimages-sufganiyahsbananacustard_vertical1_hi_branded_heart_dec19_global-332x3332--(83x83).jpg" alt="" />
-                                                <p>Sufganiyahs with Banana Custard</p>
+                                                <img src="img/mini-chicken-meatballs-thumb.jpg" alt="" loading="lazy" />
+                                                <p>Honeyglow® Pineapple Mini Chicken Meatballs</p>
                                             </a>
                                             <a href="" class="featured-recipes__recipe pineapple-theme">
-                                                <img src="img/delmonte-featuredrecipeimages-pineapplemangocashewsmoothies_horizontal_branded_hi_heart_oct19_global-332x3332--(83x83).jpg" alt="" />
-                                                <p>Pineapple-Mango Cashew Smoothies</p>
+                                                <img src="img/chia-pudding-cups-thumb.jpg" alt="" loading="lazy" />
+                                                <p>Tropical Chia Pudding Cups</p>
                                             </a>
                                             <a href="" class="featured-recipes__recipe banana-theme">
-                                                <img src="img/delmonte-featuredrecipeimages-nobakechocolatecustardshoneyedbanana_horizontal_branded_hi_heart_oct19_global-332x3332--(83x83).jpg" alt="" />
-                                                <p>No-Bake Mini Chocolate Custards with Honeyed Bananas</p>
+                                                <img src="img/cauliflower-fried-rice-thumb.jpg" alt="" loading="lazy" />
+                                                <p>Cauliflower Fried “Rice” With Honeyglow® Pineapple</p>
                                             </a>
                                         </div>
-                                        <div class="nutrition-facts">
-                                            <!-- If the recipe does not have nutrition facts, use the bulleted list -->
-                                            <!--<?php include('includes/nutrition-facts.php'); ?>-->
+                                        <div class="nutrition-info">
                                             <ul>
-                                                <li>Very low in saturated fat, cholesterol and sodium</li>
-                                                <li>Excellent source of vitamin B6</li>
-                                                <li>Good source of dietary fiber, vitamin C, potassium and manganese</li>
+                                                <li>Good source of vitamin C and manganese</li>
+                                                <li>Del Monte Gold® Extra Sweet variety has up to four times more vitamin C than traditional varieties</li>
                                             </ul>
                                         </div>
                                         <div class="tag-section">
                                             <span class="fas fa-tag"></span>
                                             <div class="tags">
                                                 <ul>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
-                                                    <?php include('includes/tag.php'); ?>
+                                                    <li class="tags__tag">
+                                                        <a href="">pineapples</a>
+                                                    </li>
+                                                    <li class="tags__tag">
+                                                        <a href="">Honeyglow</a>
+                                                    </li>
+                                                    <li class="tags__tag">
+                                                        <a href="">Del Monte Gold</a>
+                                                    </li>
+                                                    <li class="tags__tag">
+                                                        <a href="">tropical</a>
+                                                    </li>
+                                                    <li class="tags__tag">
+                                                        <a href="">fresh fruit</a>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="world-map">
-                                            <h2>Countries of Origin</h2>
+                                            <h2>Country of Origin</h2>
                                             <div class="map-container">
                                                 <div class="content">
                                                     <div id="world-map"></div>
@@ -379,73 +193,41 @@
                                 <div class="how-tos">
                                     <div class="container-fluid">
                                         <div class="row">
-                                            <div class="col-md-4">
-                                                <h2>How to Select</h2>
-                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</p>
+                                            <div class="col-lg-4">
+                                                <h2 class="page__title --yellow-100"><span>how to Select</span></h2>
+                                                <p>Look for a pineapple that is symmetrical and heavy for its size. Look for crown leaves that are fresh and green. Sniff the pineapple, and pick one that has a sweet, fragrant smell. Ensure that the pineapple is free from soft spots. Del Monte Gold® Extra Sweet Pineapples are always picked ripe and ready to eat, so there's no need to wait to enjoy them.</p>
                                             </div>
-                                            <div class="col-md-4">
-                                                <h2>How to Prepare</h2>
-                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</p>
+                                            <div class="col-lg-4">
+                                                <h2 class="page__title --yellow-100"><span>how to pRepaRe</span></h2>
+                                                <p>Twist the crown off, then cut in half,  and then quarters. Next, trim off the ends and core to remove the fruit from the shell. Finally, cut into bite-size pieces.</p>
                                             </div>
-                                            <div class="col-md-4">
-                                                <h2>How to Store</h2>
-                                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="container-fluid product-video-section">
-                                    <div class="row">
-                                        <div class="col-lg-8 col-md-6 col-sm-6">
-                                            <div class="product-video-section__video">
-                                                <div class="content">
-                                                    <iframe src="https://www.youtube.com/embed/lds049CCxtY" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 col-sm-6">
-                                            <div class="question-card">
-                                                <span class="question-card__question">What's your favorite fruit?</span>
-                                                <form class="form question-card__answers">
-                                                    <div class="question-card__answers__answer">
-                                                        <input type="radio" id="answer1" name="answers">
-                                                        <label for="answer1">Answer 1</label>
-                                                    </div>
-                                                    <div class="question-card__answers__answer">
-                                                        <input type="radio" id="answer2" name="answers">
-                                                        <label for="answer2">Answer 2</label>
-                                                    </div>
-                                                    <div class="question-card__answers__answer">
-                                                        <input type="radio" id="answer3" name="answers">
-                                                        <label for="answer3">Answer 3</label>
-                                                    </div>
-                                                    <div class="question-card__answers__answer">
-                                                        <input type="radio" id="answer4" name="answers">
-                                                        <label for="answer4">Answer 4</label>
-                                                    </div>
-                                                </form>
+                                            <div class="col-lg-4">
+                                                <h2 class="page__title --yellow-100"><span>how to StoRe</span></h2>
+                                                <p>Keep your pineapple in the refrigerator or any cold, humid place. It won't ripen any further, so try to enjoy it as soon as possible.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="leaf-img">
+                            <img src="img/product-detail-leaf.svg" alt="" loading="lazy" />
+                        </div>
+                        <div class="section-container">
                             <?php include('includes/cards.php'); ?>
                         </div>
-                        <a href="#top" class="back-to-top">
-                            <img src="img/back-to-top.png" alt="" />
-                        </a>
+                        <?php include('includes/footer.php'); ?>
                     </section>
-                    <?php include('includes/mobile-footer.php'); ?>
                 </main>
-                <?php include('includes/sitemap.php'); ?>
             </div>
             <?php include('includes/cookies-prompt.php'); ?>
         </div>
-        <?php include('includes/search-modal.php'); ?>
         <?php include('includes/updates-modal.php'); ?>
+        <?php include('img/svg-sprite/svg/symbols.svg'); ?>
         <?php include('includes/scripts.php'); ?>
         <script>
-            var map_regions = { "BO": '#552445', "CL": '#552445', "PE": '#552445' };
+            var map_regions = { "BO": '#00843d', "CL": '#00843d', "PE": '#00843d' };
         </script>
+      </form>
     </body>
 </html>

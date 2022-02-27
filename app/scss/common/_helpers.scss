@@ -1,5 +1,13 @@
 .site-wrapper {
     .align-center {
         text-align: center;
+        &.--sm {
+            padding-bottom: clamp(30px,5vw,60px);
+            padding-top: clamp(30px,5vw,60px);
+        }
+        &.--lg {
+            padding-bottom: clamp(50px,7vw,100px);
+            padding-top: clamp(50px,7vw,100px);
+        }
     }
 }

@@ -1,12 +1,33 @@
-var jq14 = jQuery.noConflict(true);
+//var jq14 = jQuery.noConflict(true);
 (function ($) {
 
     // loading screen
     $(window).on('load', function() {
-        $('.loading-screen').fadeOut();
+        setTimeout(function() {
+            $('.loading-screen').fadeOut();
+        }, 1000);
+
+        // function pv_single_news_hero_adjustment(){
+        //     var headline_h = $('.news-article-detail__headline').outerHeight();
+        //     $('.news-article-detail__image').css('margin-top',headline_h * -1);           
+        // }
+        // if($('.news-article-detail__image').length){
+        //     var window_w = $(window).width();
+        //     if(window_w > 1385){
+        //         pv_single_news_hero_adjustment();
+        //     }
+        // }
     });
 
     $(document).ready(function() {
+
+        // image masks (paper tears)
+        $('.image-mask').each(function(){
+            $(this).wrap('<div class="image-mask__container"><div></div></div>');
+        });
+        $('.image-edges').each(function(){
+            $(this).wrapInner('<div class="image-edges__container"></div>');
+        });
 
         // back to top smooth scrolling
         function backToTop(width) {
@@ -37,34 +58,6 @@ var jq14 = jQuery.noConflict(true);
         backToTop( $(window).width() );
         $(window).on('resize', function() {
             backToTop( $(this).width() );
-        });
-
-        // show/hide the login flyout
-        $('.sidebar__login__signin').on('click', function(e) {
-            e.preventDefault();
-            if ($('.flyout-signin').hasClass('open')) {
-                $('.flyout-signin').removeClass('open');
-            } else {
-                $('.flyout-signin').addClass('open');
-                $('.flyout-newsletter').removeClass('open');
-            }
-        });
-
-        // show/hide the newsletter flyout
-        $('.sidebar__newsletter .btn').on('click', function(e) {
-            e.preventDefault();
-            if ($('.flyout-newsletter').hasClass('open')) {
-                $('.flyout-newsletter').removeClass('open');
-            } else {
-                $('.flyout-newsletter').addClass('open');
-                $('.flyout-signin').removeClass('open');
-            }
-        });
-
-        // close login and newsletter flyouts when clicking outside of the sidebar
-        $('main').on('click', function() {
-            $('.flyout-signin').removeClass('open');
-            $('.flyout-newsletter').removeClass('open');
         });
 
         // close the cookies prompt
@@ -103,58 +96,66 @@ var jq14 = jQuery.noConflict(true);
         }
 
         // mobile nav menu
-        $("#menu").mmenu({
-            "extensions": [
-                "position-front"
-            ]
+        try {
+            $("#menu").mmenu({
+                onClick: {
+                    close: true,
+                    preventDefault: false,
+                },
+                offCanvas: {
+                    page: {
+                        selector: ".site-wrapper"
+                    }
+                },
+                "extensions": [
+                    "position-front"
+                ]
+            }, {
+                offCanvas: {
+                    page: {
+                        selector: ".site-wrapper"
+                    }
+                }
+            });
+        } catch (ex) {
+            console.error("Error on .mmenu", ex);
+        }
+
+        // toggle the mobile menu
+        $('.mobile-nav__burger').on('click', function () {
+            var api = $('#menu').data('mmenu');
+        
+            if ($(".mm-wrapper_opened").length > 0) {
+                api.close();
+            }
+            else {
+                api.open();
+            }
+        });
+
+        // close the mobile nav if at a desktop breakpoint
+        function closeMobileNav(width) {
+            if ($('.mobile-nav').css('display') == 'none') {
+                var api = $('#menu').data('mmenu');
+                api.close();
+            }
+        }
+        closeMobileNav( $(window).width() );
+        $(window).on('resize', function() {
+            closeMobileNav( $(this).width() );
         });
 
         // insert the mobile nav footer after the panels
         $('#menu footer').insertAfter('.mm-panels');
 
-        // toggle the sitemap
-        var sitemapLink = $('a[href="/sitemap"]');
-        sitemapLink.on('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            $('.site-wrapper').toggleClass('sitemap-open');
-            $('.flyout-signin').removeClass('open');
-            $('.flyout-newsletter').removeClass('open');
-
-            if ($('.site-wrapper').hasClass('sitemap-open')) {
-                $('.sidebar__login__search').attr('href', '');
-                $('.sidebar__login__search').on('click', function(e) {
-                    e.preventDefault();
-                    $('.sitemap__search__overlay').toggleClass('sitemap-open-search');
-                });
-            } else {
-                $('.sidebar__login__search').attr('href', '#search');
-                $('.sidebar__login__search').unbind();
-            }
-        });
-        $('.footer-nav .sitemap-link').on('click', function(e) {
-            e.preventDefault();
-        });
-
-        // toggle the sitemap search
-        $('.sitemap__search-icon').on('click', function(e) {
-            e.preventDefault();
-            $('.sitemap__search__overlay').toggleClass('sitemap-open-search');
-        });
-
-        // show sitemap when at hash
-        var hash = window.location.hash;
-        if (hash == "#sitemap") {
-            $('.site-wrapper').addClass('sitemap-open');
-        }
-
         // homepage image slider
         if ($('.homepage-slider').children().length > 1) {
             $('.homepage-slider').flickity({
                 friction: 0.27,
+                pageDots: false,
                 wrapAround: true,
                 autoPlay: 10000,
-                adaptiveHeight: true
+                imagesLoaded: true
             });
         }
 
@@ -190,7 +191,8 @@ var jq14 = jQuery.noConflict(true);
         /* For each element, create a new DIV that will act as the selected item: */
         a = document.createElement("DIV");
         a.setAttribute("class", "select-selected");
-        a.innerHTML = '<p class="initial-label">' + selElmnt.options[selElmnt.selectedIndex].innerHTML + '</p>';
+        a.innerHTML = '<span class="initial-label"><sup>*</sup>' + selElmnt.options[selElmnt.selectedIndex].innerHTML + '</span>';
+        a.innerHTML += '<svg aria-hidden="true"><use xlink:href="#svg-icon-angle-right"></use></svg>';
         x[i].appendChild(a);
         /* For each element, create a new DIV that will contain the option list: */
         b = document.createElement("DIV");
@@ -210,6 +212,7 @@ var jq14 = jQuery.noConflict(true);
                 if (s.options[i].innerHTML == this.innerHTML) {
                     s.selectedIndex = i;
                     h.innerHTML = this.innerHTML;
+                    h.innerHTML += '<svg aria-hidden="true"><use xlink:href="#svg-icon-angle-right"></use></svg>';
                     y = this.parentNode.getElementsByClassName("same-as-selected");
                     for (k = 0; k < y.length; k++) {
                     y[k].removeAttribute("class");
@@ -237,9 +240,10 @@ var jq14 = jQuery.noConflict(true);
         function closeAllSelect(elmnt) {
         /* A function that will close all select boxes in the document,
         except the current select box: */
-        var x, y, i, arrNo = [];
+        var x, y, i, custom_select, arrNo = [];
         x = document.getElementsByClassName("select-items");
         y = document.getElementsByClassName("select-selected");
+
         for (i = 0; i < y.length; i++) {
             if (elmnt == y[i]) {
             arrNo.push(i)
@@ -254,33 +258,75 @@ var jq14 = jQuery.noConflict(true);
         }
         }
 
-        // add submit button to the dropdown
-        $('<button class="btn btn--green" disabled>Continue</button>').appendTo('.contact-reason .select-items');
+        // single article hero image
+        // function pv_single_news_hero_adjustment(){
+        //     var headline_h = $('.news-article-detail__headline').outerHeight();
+        //     $('.news-article-detail__image').css('margin-top',headline_h * -1);           
+        // }
 
-        // prevent the dropdown from closing if an option has been selected
-        $('.contact-reason .select-items div').on('click', function() {
-            $(this).parent().parent().children('.select-selected').addClass('select-arrow-active');
-            $(this).parent().parent().children('.select-items').removeClass('select-hide');
+        // $(window).resize(function(){
+        //     if($('.news-article-detail__image').length){
+        //         var window_w = $(window).width();
+        //         if(window_w >= 1385){
+        //             pv_single_news_hero_adjustment();
+        //         }
+        //         if(window_w < 1385){
+        //             $('.news-article-detail__image').css('margin-top','-10%');
+        //         }        
+        //     }
+        // });
+
+
+        // Custom select
+        $('.custom_select').on('focus',function(e){
+            e.preventDefault();
+            $(this).keypress(function(event){
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if(keycode == '13'){
+                    $(this).find('.select-selected').addClass('select-arrow-active');
+                    $(this).find('.select-items').removeClass('select-hide');
+                }
+            });
         });
+
+        $('.custom_select').on('blur',function(e){
+            e.preventDefault();
+            $(this).find('.select-selected').removeClass('select-arrow-active');
+            $(this).find('.select-items').addClass('select-hide');
+        });
+
+        // Form label toggle
+        $('.contact-form__item input, .contact-form__item .custom_select select, .contact-form__item textarea').focus(function(){
+            $(this).siblings('label').css('display','none');
+        });
+
+        $('.contact-form__item input, .contact-form__item textarea').blur(function(){
+            if(!$(this).val()) {
+                $(this).siblings('label').css('display','block');    
+            } else {
+                $(this).siblings('label').css('display','none');
+            }
+        });
+
+        // once a reason for comment has been selected, enable the Continue button
         $('.contact-reason .select-selected').on('click', function() {
             if (!($(this).find('p').length > 0)) {
-                console.log('worked');
-                $(this).addClass('select-arrow-active');
-                $(this).parent().children('.select-items').removeClass('select-hide');
-                $('.contact-reason button').removeAttr('disabled');
+                $('.contact-reason-button').removeAttr('disabled');
+                $('#iagree-contact').removeAttr('disabled');
+                $('#submit-contact').removeAttr('disabled');
             }
         });
 
         // when the dropdown's button is clicked, close the dropdown and show the gated content or message field, depending on the user's choice
-        $('.contact-reason button').on('click', function(e) {
+        $('.contact-reason-button').on('click', function(e) {
             e.preventDefault();
             closeAllSelect();
+            $(".contact-hidden-start").show();
             if ($('.contact-reason select').val() == 'Concern') {
                 $('.contact-form .gated-content').fadeIn();
-                //$('.contact-form .gated-content textarea + .validation-text').fadeIn();
+                $('.contact-form .iagree').fadeIn();
+                $('.contact-form .submit').fadeIn();
                 $('.contact-form .message').fadeOut();
-                //$('.contact-form .message textarea + .validation-text').fadeOut();
-
                 $('.contact-form .message textarea').prop("required", false);
                 $('.contact-form .gated-content input').each(function(){
                   if($(this).attr("type") != "hidden" && $(this).attr("placeholder").indexOf("*") != -1 ){
@@ -289,23 +335,15 @@ var jq14 = jQuery.noConflict(true);
                 });
                 $('.contact-form .gated-content textarea').prop("required", true);
                 $('.contact-form .gated-content select').prop("required", true);
-
-
-                $('#iagree-contact').removeAttr('disabled');
-                $('#submit-contact').removeAttr('disabled');
             } else {
                 $('.contact-form .message').fadeIn();
-                //$('.contact-form .message textarea + .validation-text').fadeIn();
+                $('.contact-form .iagree').fadeIn();
+                $('.contact-form .submit').fadeIn();
                 $('.contact-form .gated-content').fadeOut();
-                //$('.contact-form .gated-content textarea + .validation-text').fadeOut();
-
                 $('.contact-form .message textarea').prop("required", true);
                 $('.contact-form .gated-content input').prop("required", false);
                 $('.contact-form .gated-content textarea').prop("required", false);
                 $('.contact-form .gated-content select').prop("required", false);
-
-                $('#iagree-contact').removeAttr('disabled');
-                $('#submit-contact').removeAttr('disabled');
             }
         });
 
@@ -396,10 +434,10 @@ var jq14 = jQuery.noConflict(true);
 
         // date range picker
         $('.datepicker input').daterangepicker();
-        $('.singlepicker input').daterangepicker({
+        $('.singlepicker input[type=text]').daterangepicker({
             singleDatePicker: true,
         });
-        $('.singlepicker input').val($('.singlepicker input').attr('placeholder'));
+        $('.singlepicker input[type=text]').val($('.singlepicker input[type=text]').attr('placeholder'));
         $('.daterangepicker').appendTo('.singlepicker');
         $('.daterangepicker').appendTo('.multipicker');
 
@@ -420,7 +458,8 @@ var jq14 = jQuery.noConflict(true);
             $('.recipe-slider').flickity({
                 friction: 0.27,
                 wrapAround: true,
-                adaptiveHeight: true
+                adaptiveHeight: true,
+                imagesLoaded: true,
             });
             var flkty = $('.recipe-slider').data('flickity');
             setTimeout(function() {
@@ -433,20 +472,22 @@ var jq14 = jQuery.noConflict(true);
             var $carousel = $('.product-slider').flickity({
                 friction: 0.27,
                 wrapAround: true,
-                adaptiveHeight: true
+                adaptiveHeight: true,
+                imagesLoaded: true
             });
             var flkty = $carousel.data('flickity');
-            $(".product-varieties div").first().addClass("active");
-            $(".product-varieties div").click(function () {
-                $(".product-varieties div").removeClass("active");
+            $(".product-varieties a").first().addClass("active");
+            $(".product-varieties a").on('click', function (e) {
+                e.preventDefault();
+                $(".product-varieties a").removeClass("active");
                 $(this).addClass("active");
 
                 var idx = $(this).attr("data-start");
                 $carousel.flickity('select', idx);
             });
             $carousel.on('select.flickity', function () {
-                $(".product-varieties div").removeClass("active");
-                $(".product-varieties div").each(function () {
+                $(".product-varieties a").removeClass("active");
+                $(".product-varieties a").each(function () {
                     var idx = $(this).attr("data-start");
                     var idxn = $(this).next().attr("data-start");
                     if (idx == flkty.selectedIndex || (idx < flkty.selectedIndex && flkty.selectedIndex < idxn)) {
@@ -459,25 +500,6 @@ var jq14 = jQuery.noConflict(true);
                 flkty.resize();
             }, 100);
         }
-
-        // read more on news pages
-        /*function showReadMore(width) {
-            $('.news-article__content__snippet').each(function() {
-                var height = $(this).height();
-                var a = $(this).parent().children('.news-article__content__read-more');
-                if (height >= 209 && width >= 535) {
-                    a.css('display', 'block');
-                    $(this).addClass('overflowed');
-                } else {
-                    a.css('display', 'none');
-                    $(this).removeClass('overflowed');
-                }
-            });
-        }
-        showReadMore( $(window).width() );
-        $(window).on('resize', function() {
-            showReadMore( $(this).width() );
-        });*/
 
         // calendar events
         if ($('.calendar-parent').length > 0) {
@@ -507,171 +529,6 @@ var jq14 = jQuery.noConflict(true);
             }
         });
 
-        // make filter selections sticky on mobile
-        $(window).scroll(function () {
-            // general
-            if ($(window).scrollTop() > 147) {
-                $('.recipes-dataset .browse-filters').addClass('nav-up');
-            }
-            if ($(window).scrollTop() < 148) {
-                $('.recipes-dataset .browse-filters').removeClass('nav-up');
-            }
-
-            // news landing
-            if ($(window).scrollTop() > 39) {
-                $('.recipes-dataset.news-landing .browse-filters').addClass('nav-up');
-            }
-            if ($(window).scrollTop() < 40) {
-                $('.recipes-dataset.news-landing .browse-filters').removeClass('nav-up');
-            }
-
-            // events landing
-            if ($(window).scrollTop() > 92) {
-                $('.recipes-dataset.event-details .browse-filters').addClass('nav-up');
-            }
-            if ($(window).scrollTop() < 93) {
-                $('.recipes-dataset.event-details .browse-filters').removeClass('nav-up');
-            }
-
-            // search results
-            if ($(window).scrollTop() > 157) {
-                $('.recipes-dataset.searchresults .browse-filters').addClass('nav-up');
-            }
-            if ($(window).scrollTop() < 158) {
-                $('.recipes-dataset.searchresults .browse-filters').removeClass('nav-up');
-            }
-
-            // recipes landing
-            if ($(window).scrollTop() > 147) {
-                $('.recipes-landing .browse-filters').addClass('nav-up');
-            }
-            if ($(window).scrollTop() < 148) {
-                $('.recipes-landing .browse-filters').removeClass('nav-up');
-            }
-        });
-
-        // filter list priority nav
-        if ($('.recipes-dataset').length) {
-            var container = document.querySelector('.tabs');
-            var primary = container.querySelector('.-primary');
-            var primaryItems = container.querySelectorAll('.-primary > li:not(.-more)');
-
-            container.classList.add('-jsfied');
-            primary.insertAdjacentHTML('beforeend', "\n<li class=\"-more\">\n<button type=\"button\" class=\"btn btn--green\" aria-haspopup=\"true\" aria-expanded=\"false\">\nMore\n</button>\n<ul class=\"-secondary\">\n".concat(primary.innerHTML, "\n</ul>\n</li>\n"));
-
-            var secondary = container.querySelector('.-secondary');
-            var secondaryItems = secondary.querySelectorAll('li');
-            var allItems = container.querySelectorAll('li');
-            var moreLi = primary.querySelector('.-more');
-            var moreBtn = moreLi.querySelector('button');
-
-            moreBtn.addEventListener('click', function (e) {
-                e.preventDefault();
-                container.classList.toggle('-show-secondary');
-                moreBtn.setAttribute('aria-expanded', container.classList.contains('-show-secondary'));
-            });
-
-            var doAdapt = function doAdapt() {
-                allItems.forEach(function (item) {
-                    item.classList.remove('-hidden');
-                });
-
-                var stopWidth = moreBtn.offsetWidth;
-                var hiddenItems = [];
-                var primaryWidth = primary.offsetWidth;
-
-                primaryItems.forEach(function (item, i) {
-                    if (primaryWidth >= stopWidth + item.offsetWidth) {
-                        stopWidth += item.offsetWidth;
-                    } else {
-                        item.classList.add('-hidden');
-                        hiddenItems.push(i);
-                    }
-                });
-
-                if (!hiddenItems.length) {
-                    moreLi.classList.add('-hidden');
-                    container.classList.remove('-show-secondary');
-                    moreBtn.setAttribute('aria-expanded', false);
-                } else {
-                    secondaryItems.forEach(function (item, i) {
-                        if (!hiddenItems.includes(i)) {
-                            item.classList.add('-hidden');
-                        }
-                    });
-                }
-            };
-
-            doAdapt();
-            window.addEventListener('resize', doAdapt);
-            document.addEventListener('click', function (e) {
-                var el = e.target;
-
-                while (el) {
-                    if (el === secondary || el === moreBtn) {
-                        return;
-                    }
-
-                    el = el.parentNode;
-                }
-
-                container.classList.remove('-show-secondary');
-                moreBtn.setAttribute('aria-expanded', false);
-            });
-        }
-
-        // move varieties into appropriate sections based on window width
-        function varietyRows(width) {
-            if (width >= 0 && width <= 535) {
-                $('.product-varieties-initial .product-varieties .product-varieties__variety:nth-child(n+4)').prependTo('.product-varieties-toggle .product-varieties');
-            } else if (width >= 536 && width <= 1285) {
-                $('.product-varieties-toggle .product-varieties .product-varieties__variety:nth-child(-n+1)').appendTo('.product-varieties-initial .product-varieties');
-                $('.product-varieties-initial .product-varieties .product-varieties__variety:nth-child(n+5)').prependTo('.product-varieties-toggle .product-varieties');
-            } else if (width >= 1286) {
-                $('.product-varieties-toggle .product-varieties .product-varieties__variety:nth-child(-n+4)').appendTo('.product-varieties-initial .product-varieties');
-                $('.product-varieties-initial .product-varieties .product-varieties__variety:nth-child(n+9)').prependTo('.product-varieties-toggle .product-varieties');
-            }
-        }
-        varietyRows( $(window).width() );
-        $(window).on('resize', function() {
-            varietyRows( $(this).width() );
-        });
-
-        // show or hide the Show More button based on the number of varieties
-        function showHideMore(width) {
-            var variety = $('.product-varieties__variety');
-
-            if (width >= 0 && width <= 535) {
-                if ( variety.length <= 3) {
-                    $('.varieties__heading a').hide();
-                } else {
-                    $('.varieties__heading a').show();
-                }
-            } else if (width >= 536 && width <= 1285) {
-                if ( variety.length <= 4) {
-                    $('.varieties__heading a').hide();
-                } else {
-                    $('.varieties__heading a').show();
-                }
-            } else if (width >= 1286) {
-                if ( variety.length <= 8) {
-                    $('.varieties__heading a').hide();
-                } else {
-                    $('.varieties__heading a').show();
-                }
-            }
-        }
-        showHideMore( $(window).width() );
-        $(window).on('resize', function() {
-            showHideMore( $(this).width() );
-        });
-
-        // change the active product variety on thumbnail click
-        $('.product-varieties__variety').on('click', function() {
-            $('.product-varieties__variety').removeClass('active');
-            $(this).addClass('active');
-        });
-
         // show and hide the different rating states
         $('.rating-initial a').on('click', function(e) {
             e.preventDefault();
@@ -695,21 +552,11 @@ var jq14 = jQuery.noConflict(true);
                 $('.bs-tooltip-bottom').css('visibility', 'visible');
             }
         });
-        $('.recipe-actions__favorite a').on('click', function(e) {
-            e.preventDefault();
-            $(this).toggleClass('added removed');
-
-            if ($(this).hasClass('added')) {
-                $(this).attr('data-original-title', 'Remove from favorites');
-            } else {
-                $(this).attr('data-original-title', 'Add to favorites');
-            }
-        });
 
         // enable popovers
         $('[data-toggle="popover"]').popover({
             content: function () {
-                return "<ul>"+$(this).siblings("ul").html() + "</ul>";
+                return $("<ul>"+$(this).siblings("ul").html() + "</ul>");
             }
         });
 
@@ -740,6 +587,29 @@ var jq14 = jQuery.noConflict(true);
             });
         }
 
+        // remove nav class when scrolled to the top of the screen
+        var top_offset = $(window).scrollTop();
+        if (top_offset == 0) {
+            $('header').removeClass('small-nav');
+            $('.mobile-nav').removeClass('bg');
+        } else {
+            $('header').addClass('small-nav');
+            $('.mobile-nav').addClass('bg');
+        }
+
+        $(function () {
+            $(window).scroll(function () {
+                var top_offset = $(window).scrollTop();
+                if (top_offset == 0) {
+                    $('header').removeClass('small-nav');
+                    $('.mobile-nav').removeClass('bg');
+                } else {
+                    $('header').addClass('small-nav');
+                    $('.mobile-nav').addClass('bg');
+                }
+            })
+        });
+
     });
     superscriptElement($('body'));
     function superscriptElement(element) {
@@ -762,15 +632,58 @@ var jq14 = jQuery.noConflict(true);
         });
       }
     }
-}(jq14));
 
 
+    // toggle form labels
+    var inpsToMonitor = document.querySelectorAll (
+        ".site-wrapper.contact .form-control"
+    );
+    for (var J = inpsToMonitor.length - 1;  J >= 0;  --J) {
+        inpsToMonitor[J].addEventListener ("change",    adjustStyling, false);
+        inpsToMonitor[J].addEventListener ("keyup",     adjustStyling, false);
+        inpsToMonitor[J].addEventListener ("focus",     adjustStyling, false);
+        inpsToMonitor[J].addEventListener ("blur",      adjustStyling, false);
+        inpsToMonitor[J].addEventListener ("mousedown", adjustStyling, false);
 
+        //-- Initial update. note that IE support is NOT needed.
+        var evt = document.createEvent ("HTMLEvents");
+        evt.initEvent ("change", false, true);
+        inpsToMonitor[J].dispatchEvent (evt);
+    }
+
+    function adjustStyling (zEvent) {
+        var inpVal  = zEvent.target.value;
+        if (inpVal  &&  inpVal.replace (/^\s+|\s+$/g, "") )
+            zEvent.currentTarget.parentNode.classList.add('--has-value');
+        else
+            zEvent.currentTarget.parentNode.classList.remove('--has-value');
+    }
+
+
+}($));
 
 // wrap trademark symbols in sup tags
 function superscript(html) {
     html =  html.replace(/((?!<sup>\s*))&reg;((?!\s*<\/sup>))/gi, '<sup>&reg;</sup>').replace(/((?!<sup>\s*))®((?!\s*<\/sup>))/gi, '<sup>&reg;</sup>');
     html =  html.replace(/((?!<sup>\s*))&trade;((?!\s*<\/sup>))/gi, '<sup>&trade;</sup>').replace(/((?!<sup>\s*))™((?!\s*<\/sup>))/gi, '<sup>&trade;</sup>');
     return html;
+}
+
+function copyText(element) {
+  // click to copy URL
+
+    var copyTextarea = $(element).children("textarea")[0];
+    $(copyTextarea).css("display","block");
+  copyTextarea.focus();
+  copyTextarea.select();
+
+  try {
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'successful' : 'unsuccessful';
+      console.log('Copying text command was ' + msg);
+  } catch (err) {
+      console.log('Oops, unable to copy');
+  }
+
 }
 //document.body.innerHTML = superscript(document.body.innerHTML);
